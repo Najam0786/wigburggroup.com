@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="yBS8n_OxuGzRxZp3Rjn0KsEN5dBy_wpoqddkfdPox28" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Wigburg Gen AI — AI Engineering Agency | Spain & Global</title>
+<meta name="description" content="Wigburg Gen AI builds AI voice agents, RAG knowledge systems and AI automation for businesses worldwide. Based in Spain, Costa del Sol. Live in 4–6 weeks. No IT team needed.">
+<meta name="keywords" content="AI agency Spain, AI consulting Fuengirola, AI consulting Costa del Sol, AI voice agent, RAG system, AI automation, agencia inteligencia artificial España, AI engineering Barcelona, AI solutions SME Europe">
+<meta name="author" content="Wigburg Gen AI">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://wigburggroup.com/">
+
+<!-- Open Graph — looks good when shared on WhatsApp, LinkedIn, Facebook -->
+<meta property="og:title" content="Wigburg Gen AI — We Build AI That Works">
+<meta property="og:description" content="AI voice agents, RAG systems and automation for any business. Based in Spain, working globally. Live in 4–6 weeks.">
+<meta property="og:url" content="https://wigburggroup.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Wigburg Gen AI">
+
+<!-- Twitter/X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@WigburgA">
+<meta name="twitter:title" content="Wigburg Gen AI — AI Engineering for Any Business">
+<meta name="twitter:description" content="We build AI voice agents, RAG systems and automation. Based in Spain, working globally. Live in 4–6 weeks.">
+
+<!-- Schema markup — tells Google exactly what this business is -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Wigburg Gen AI",
+  "description": "AI engineering agency specialising in AI voice agents, RAG knowledge systems and business automation. Based in Spain, serving clients globally.",
+  "url": "https://wigburggroup.com",
+  "email": "wigburggenai@gmail.com",
+  "telephone": "+34687334497",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Fuengirola",
+    "addressRegion": "Andalusia",
+    "addressCountry": "ES"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": ["AI Voice Agents", "RAG Systems", "AI Automation", "MLOps", "AI Consulting"],
+  "sameAs": [
+    "https://www.instagram.com/wigburg_gen_ai/",
+    "https://www.youtube.com/@wigburg_gen_ai",
+    "https://www.tiktok.com/@wigburg.gen.ai",
+    "https://x.com/WigburgA"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0D0D0D;
+  --page:#F5F3EE;
+  --accent:#6B4EFF;
+  --accent2:#00D4A8;
+  --warm:#FFF8F0;
+  --muted:#6B6B6B;
+  --border:#E0DDD7;
+  --card:#FFFFFF;
+  --navy:#0A1628;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--page);color:var(--ink);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 5%;
+  background:rgba(245,243,238,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--ink);text-decoration:none;letter-spacing:-0.02em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--ink)!important;color:var(--page)!important;padding:.5rem 1.3rem;border-radius:100px;font-size:.88rem!important;font-weight:600!important;transition:opacity .2s!important}
+.nav-cta:hover{opacity:.85}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:9rem 5% 5rem;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:var(--page);
+  z-index:0;
+}
+.blob1{
+  position:absolute;top:-10%;right:-5%;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(107,78,255,.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.blob2{
+  position:absolute;bottom:-10%;left:-5%;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(0,212,168,.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-inner{max-width:820px;position:relative;z-index:1}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.8rem;font-weight:500;color:var(--accent);
+  margin-bottom:2rem;
+}
+.eyebrow-dot{width:6px;height:6px;background:var(--accent2);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(3rem,6.5vw,5rem);
+  font-weight:800;
+  line-height:1.05;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+  margin-bottom:1.8rem;
+}
+.hero h1 .line2{color:var(--accent)}
+.hero-lead{
+  font-size:1.15rem;
+  color:var(--muted);
+  max-width:520px;
+  line-height:1.75;
+  margin-bottom:2.5rem;
+  font-weight:300;
+}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:4rem}
+.btn-dark{
+  background:var(--ink);color:var(--page);
+  padding:.9rem 2.2rem;border-radius:100px;
+  font-weight:600;font-size:1rem;text-decoration:none;
+  transition:opacity .2s,transform .15s;display:inline-block;
+}
+.btn-dark:hover{opacity:.85;transform:translateY(-1px)}
+.btn-line{
+  color:var(--muted);padding:.9rem 1.5rem;
+  font-weight:500;font-size:1rem;text-decoration:none;
+  display:inline-flex;align-items:center;gap:.4rem;
+  transition:color .2s;
+}
+.btn-line:hover{color:var(--ink)}
+
+/* TICKER / MARQUEE */
+.ticker{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:.9rem 0;overflow:hidden;
+  background:var(--warm);
+}
+.ticker-track{
+  display:flex;gap:3rem;width:max-content;
+  animation:ticker 28s linear infinite;
+}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{
+  display:flex;align-items:center;gap:.7rem;
+  font-size:.85rem;font-weight:500;color:var(--muted);
+  white-space:nowrap;
+}
+.ticker-item span{color:var(--accent);font-size:1rem}
+
+/* STATS ROW */
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--border);
+  border-left:1px solid var(--border);
+}
+.stat{
+  padding:2.5rem 2rem;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.stat strong{
+  font-family:'Syne',sans-serif;
+  font-size:2.8rem;font-weight:800;
+  line-height:1;color:var(--ink);
+  display:block;margin-bottom:.4rem;
+  letter-spacing:-0.02em;
+}
+.stat strong em{color:var(--accent);font-style:normal}
+.stat p{font-size:.88rem;color:var(--muted);line-height:1.5}
+
+/* SECTIONS */
+section{padding:7rem 5%}
+.section-inner{max-width:1160px;margin:0 auto}
+.label{
+  font-size:.78rem;font-weight:600;
+  color:var(--accent);letter-spacing:.08em;
+  text-transform:uppercase;margin-bottom:1.2rem;display:block;
+}
+.section-h{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:800;line-height:1.15;
+  letter-spacing:-0.025em;
+  color:var(--ink);margin-bottom:1rem;
+}
+.section-sub{font-size:1.05rem;color:var(--muted);max-width:520px;line-height:1.75;font-weight:300}
+
+/* WHAT WE BUILD */
+.build-bg{background:var(--ink);color:var(--page)}
+.build-bg .section-h{color:var(--page)}
+.build-bg .label{color:var(--accent2)}
+.build-bg .section-sub{color:rgba(245,243,238,.6)}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(255,255,255,.1);
+  margin-top:4rem;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;overflow:hidden;
+}
+.svc{
+  background:var(--ink);
+  padding:2.5rem 2rem;
+  transition:background .25s;
+}
+.svc:hover{background:#1a1a2e}
+.svc-num{
+  font-family:'Syne',sans-serif;
+  font-size:3.5rem;font-weight:800;
+  color:rgba(255,255,255,.07);
+  line-height:1;margin-bottom:1rem;
+  letter-spacing:-0.03em;
+}
+.svc-icon{font-size:1.8rem;margin-bottom:1rem;display:block}
+.svc h3{
+  font-family:'Syne',sans-serif;
+  font-size:1.2rem;font-weight:700;
+  color:var(--page);margin-bottom:.7rem;
+}
+.svc p{font-size:.9rem;color:rgba(245,243,238,.55);line-height:1.7}
+.svc-tag{
+  display:inline-block;margin-top:1.2rem;
+  font-size:.75rem;font-weight:600;
+  padding:.25rem .8rem;border-radius:100px;
+  background:rgba(107,78,255,.2);color:var(--accent);
+}
+
+/* PROBLEM */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.problem-cards{display:flex;flex-direction:column;gap:1rem}
+.pcard{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;padding:1.6rem;
+  display:flex;gap:1rem;align-items:flex-start;
+  transition:border-color .2s,box-shadow .2s;
+}
+.pcard:hover{border-color:rgba(107,78,255,.3);box-shadow:0 4px 24px rgba(107,78,255,.08)}
+.pcard-icon{
+  flex-shrink:0;width:40px;height:40px;
+  background:rgba(107,78,255,.1);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+}
+.pcard-text strong{display:block;font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:.3rem}
+.pcard-text p{font-size:.88rem;color:var(--muted);line-height:1.65}
+
+/* HOW */
+.how-bg{background:var(--warm)}
+.process{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem}
+.step{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;padding:2.2rem 2rem;
+  position:relative;
+}
+.step-line{
+  position:absolute;top:2.8rem;right:-1rem;
+  width:2rem;height:1px;background:var(--border);
+}
+.step:last-child .step-line{display:none}
+.step-n{
+  font-family:'Syne',sans-serif;
+  font-size:2.8rem;font-weight:800;
+  color:rgba(107,78,255,.12);
+  line-height:1;margin-bottom:1.2rem;
+  letter-spacing:-0.02em;
+}
+.step h3{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.6rem}
+.step p{font-size:.88rem;color:var(--muted);line-height:1.7}
+.step-duration{
+  display:inline-block;margin-top:1.2rem;
+  font-size:.75rem;font-weight:600;color:var(--accent2);
+  background:rgba(0,212,168,.1);
+  padding:.25rem .8rem;border-radius:100px;
+}
+
+/* INDUSTRIES */
+.ind-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;margin-top:3.5rem;
+}
+.ind{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;padding:2rem;
+  transition:border-color .2s,transform .2s;
+  cursor:default;
+}
+.ind:hover{border-color:var(--accent);transform:translateY(-3px)}
+.ind-emoji{font-size:2.2rem;display:block;margin-bottom:1rem}
+.ind h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.ind p{font-size:.88rem;color:var(--muted);line-height:1.65}
+
+/* STACK */
+.stack-bg{background:var(--ink)}
+.stack-bg .section-h{color:var(--page)}
+.stack-bg .label{color:var(--accent2)}
+.stack-bg .section-sub{color:rgba(245,243,238,.55)}
+.tech-grid{
+  display:flex;flex-wrap:wrap;gap:.75rem;
+  margin-top:3rem;
+}
+.tech-pill{
+  padding:.55rem 1.2rem;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:100px;
+  font-size:.88rem;color:rgba(245,243,238,.7);
+  font-weight:500;
+  transition:border-color .2s,color .2s;
+}
+.tech-pill:hover{border-color:var(--accent);color:var(--page)}
+.tech-pill.hot{border-color:rgba(107,78,255,.4);color:var(--accent)}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:4rem}
+.why-list{list-style:none;display:flex;flex-direction:column;gap:1.5rem}
+.why-item{display:flex;gap:1.2rem;align-items:flex-start}
+.why-icon{
+  flex-shrink:0;width:44px;height:44px;
+  background:rgba(107,78,255,.1);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+}
+.why-text strong{display:block;font-size:.98rem;font-weight:600;color:var(--ink);margin-bottom:.25rem}
+.why-text p{font-size:.88rem;color:var(--muted);line-height:1.65}
+.contact-card{
+  background:var(--ink);color:var(--page);
+  border-radius:20px;padding:2.8rem;
+  position:sticky;top:6rem;
+}
+.contact-card h3{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:.8rem;line-height:1.2;letter-spacing:-0.02em}
+.contact-card p{font-size:.95rem;color:rgba(245,243,238,.6);margin-bottom:2rem;line-height:1.65}
+.contact-detail{display:flex;align-items:center;gap:.7rem;margin-bottom:.8rem}
+.contact-detail a{color:var(--accent2);text-decoration:none;font-size:.92rem;font-weight:500}
+.contact-detail span{font-size:1rem}
+.btn-accent{
+  display:block;text-align:center;
+  background:var(--accent);color:var(--page);
+  padding:1rem;border-radius:12px;
+  font-weight:600;font-size:1rem;text-decoration:none;
+  margin-top:1.8rem;transition:opacity .2s;
+}
+.btn-accent:hover{opacity:.88}
+
+/* PRICING */
+.pricing-bg{background:var(--warm)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;align-items:start}
+.price-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;padding:2.2rem 2rem;
+  position:relative;
+}
+.price-card.highlight{
+  background:var(--ink);color:var(--page);
+  border-color:var(--ink);
+}
+.price-card.highlight .price-name,
+.price-card.highlight .price-feat li{color:rgba(245,243,238,.6)}
+.price-card.highlight h3{color:var(--page)}
+.price-card.highlight .price-amount{color:var(--page)}
+.price-pop{
+  position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+  background:var(--accent);color:var(--page);
+  font-size:.72rem;font-weight:700;
+  padding:.3rem 1rem;border-radius:0 0 10px 10px;
+  letter-spacing:.04em;white-space:nowrap;
+}
+.price-name{font-size:.75rem;font-weight:600;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.8rem}
+.price-amount{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:0.3rem}
+.price-note{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
+.price-feat{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem}
+.price-feat li{display:flex;gap:.6rem;font-size:.88rem;color:var(--muted);align-items:flex-start;line-height:1.5}
+.price-feat li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+.btn-card{
+  display:block;width:100%;text-align:center;
+  padding:.85rem;border-radius:10px;font-weight:600;
+  font-size:.92rem;text-decoration:none;transition:opacity .2s;
+}
+.btn-card-dark{background:var(--ink);color:var(--page)}
+.btn-card-dark:hover{opacity:.8}
+.btn-card-light{background:rgba(107,78,255,.1);color:var(--accent)}
+.btn-card-light:hover{opacity:.8}
+.btn-card-white{background:var(--page);color:var(--ink)}
+.btn-card-white:hover{opacity:.85}
+
+/* CTA BAND */
+.cta-band{
+  background:var(--accent);
+  padding:7rem 5%;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-band::before{
+  content:'';position:absolute;
+  top:-30%;right:-10%;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(255,255,255,.1),transparent 65%);
+  pointer-events:none;
+}
+.cta-band h2{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2.2rem,5vw,3.8rem);
+  font-weight:800;color:#fff;
+  letter-spacing:-0.03em;line-height:1.1;
+  margin-bottom:1rem;position:relative;
+}
+.cta-band p{font-size:1.1rem;color:rgba(255,255,255,.75);margin-bottom:2.5rem;font-weight:300}
+.btn-white{
+  background:#fff;color:var(--accent);
+  padding:1rem 2.8rem;border-radius:100px;
+  font-weight:700;font-size:1.05rem;text-decoration:none;
+  display:inline-block;transition:opacity .2s,transform .15s;
+}
+.btn-white:hover{opacity:.93;transform:translateY(-2px)}
+
+/* FOOTER */
+footer{
+  background:#0D0D0D;
+  padding:3rem 5%;
+  display:grid;grid-template-columns:1fr auto;
+  gap:2rem;align-items:center;
+}
+.footer-left .logo-f{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--page);text-decoration:none;display:block;margin-bottom:.5rem}
+.footer-left .logo-f span{color:var(--accent)}
+.footer-left p{font-size:.82rem;color:rgba(245,243,238,.4)}
+.footer-right{display:flex;flex-direction:column;align-items:flex-end;gap:.5rem}
+.footer-socials{display:flex;gap:1.2rem;list-style:none}
+.footer-socials a{font-size:.85rem;color:rgba(245,243,238,.45);text-decoration:none;transition:color .2s}
+.footer-socials a:hover{color:var(--page)}
+.footer-right p{font-size:.78rem;color:rgba(245,243,238,.25)}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;
+  padding:.4rem;z-index:300;
+}
+.hamburger span{
+  display:block;width:24px;height:2px;
+  background:var(--ink);border-radius:2px;
+  transition:transform .25s,opacity .25s;
+}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE NAV DRAWER */
+.mobile-nav{
+  display:none;
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:var(--page);z-index:250;
+  flex-direction:column;align-items:center;justify-content:center;
+  gap:2rem;
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{
+  font-family:'Syne',sans-serif;font-size:1.6rem;
+  font-weight:700;color:var(--ink);text-decoration:none;
+  transition:color .2s;
+}
+.mobile-nav a:hover{color:var(--accent)}
+.mobile-nav .mob-cta{
+  background:var(--ink);color:var(--page)!important;
+  padding:.8rem 2.5rem;border-radius:100px;
+  font-size:1.1rem!important;margin-top:.5rem;
+}
+
+/* TABLET */
+@media(max-width:960px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:1fr 1fr;gap:1px}
+  .process{grid-template-columns:1fr}
+  .ind-grid{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .problem-grid,.why-grid{grid-template-columns:1fr;gap:3rem}
+  .contact-card{position:static}
+  footer{grid-template-columns:1fr}
+  .footer-right{align-items:flex-start}
+  .step{flex-direction:row;text-align:left;gap:1.5rem}
+  .step-num{flex-shrink:0;margin:0}
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  nav{padding:.9rem 5%}
+  .hero{padding:7rem 5% 3.5rem}
+  .hero h1{font-size:2.4rem;line-height:1.1}
+  .hero-lead{font-size:1rem}
+  .hero-ctas{flex-direction:column;align-items:flex-start;gap:.75rem}
+  .btn-dark,.btn-line{width:100%;text-align:center;justify-content:center}
+  section{padding:4rem 5%}
+  .section-h{font-size:1.7rem}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .stat{padding:1.5rem 1.2rem}
+  .stat strong{font-size:2rem}
+  .services-grid{grid-template-columns:1fr}
+  .ind-grid{grid-template-columns:1fr}
+  .process{grid-template-columns:1fr}
+  .step{flex-direction:column;text-align:left}
+  .pricing-grid{grid-template-columns:1fr}
+  .tech-grid{gap:.5rem}
+  .tech-pill{font-size:.78rem;padding:.35rem .8rem}
+  .why-grid{grid-template-columns:1fr;gap:2.5rem}
+  .contact-card{padding:2rem 1.5rem}
+  .contact-card h3{font-size:1.3rem}
+  .cta-band{padding:4rem 5%}
+  .cta-band h2{font-size:1.9rem}
+  footer{padding:2.5rem 5% 1.5rem}
+  .footer-left,.footer-right{text-align:left}
+  .footer-socials{gap:1rem;flex-wrap:wrap}
+  .svc{padding:1.8rem 1.5rem}
+  .ind{padding:1.5rem}
+  .price-card{padding:1.8rem 1.5rem}
+  .why-item{gap:.8rem}
+  .why-icon{width:36px;height:36px}
+  .ticker-item{font-size:.78rem}
+  /* safe area for notched phones */
+  nav{padding-top:calc(.9rem + env(safe-area-inset-top,0px))}
+  .hero{padding-top:calc(7rem + env(safe-area-inset-top,0px))}
+  footer{padding-bottom:calc(1.5rem + env(safe-area-inset-bottom,0px))}
+}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">Wigburg <span>GenAI</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-cta">Talk to us</a></li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-nav" id="mob-nav">
+  <a href="#services" class="mob-link">Services</a>
+  <a href="#industries" class="mob-link">Industries</a>
+  <a href="#process" class="mob-link">Process</a>
+  <a href="#pricing" class="mob-link">Pricing</a>
+  <a href="#contact" class="mob-cta mob-link">Talk to us</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><div class="blob1"></div><div class="blob2"></div></div>
+  <div class="hero-inner">
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      AI Engineering · Any Industry · Deployed in Weeks
+    </div>
+    <h1>We build AI<br><span class="line2">that actually works</span><br>for your business.</h1>
+    <p class="hero-lead">Voice agents, RAG systems, AI automation and multi-agent pipelines — built from scratch for your specific problem. We bring everything. You bring the challenge.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-dark">Get a free consultation</a>
+      <a href="#services" class="btn-line">See what we build ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item"><span>◆</span> AI Voice Agents</span>
+    <span class="ticker-item"><span>◆</span> RAG Knowledge Systems</span>
+    <span class="ticker-item"><span>◆</span> Multi-Agent Pipelines</span>
+    <span class="ticker-item"><span>◆</span> MLOps & Deployment</span>
+    <span class="ticker-item"><span>◆</span> LLM Fine-tuning</span>
+    <span class="ticker-item"><span>◆</span> Data Engineering</span>
+    <span class="ticker-item"><span>◆</span> Process Automation</span>
+    <span class="ticker-item"><span>◆</span> GDPR-Safe Architecture</span>
+    <span class="ticker-item"><span>◆</span> AI Voice Agents</span>
+    <span class="ticker-item"><span>◆</span> RAG Knowledge Systems</span>
+    <span class="ticker-item"><span>◆</span> Multi-Agent Pipelines</span>
+    <span class="ticker-item"><span>◆</span> MLOps & Deployment</span>
+    <span class="ticker-item"><span>◆</span> LLM Fine-tuning</span>
+    <span class="ticker-item"><span>◆</span> Data Engineering</span>
+    <span class="ticker-item"><span>◆</span> Process Automation</span>
+    <span class="ticker-item"><span>◆</span> GDPR-Safe Architecture</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="section-inner" style="padding:0 5%;max-width:100%">
+  <div class="stats-row">
+    <div class="stat">
+      <strong>4–6<em>wk</em></strong>
+      <p>Average time from first call to a live production system</p>
+    </div>
+    <div class="stat">
+      <strong>Any<em>.</em></strong>
+      <p>Industry, sector, country — if there's a problem, we can build a solution</p>
+    </div>
+    <div class="stat">
+      <strong>0</strong>
+      <p>IT infrastructure required from you — we bring everything</p>
+    </div>
+    <div class="stat">
+      <strong>24<em>/7</em></strong>
+      <p>Your AI system runs continuously — no staff needed to keep it alive</p>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="build-bg" id="services">
+  <div class="section-inner">
+    <span class="label">What we build</span>
+    <h2 class="section-h">Production-ready AI.<br>Not demos. Not prototypes.</h2>
+    <p class="section-sub">We engineer systems that run in the real world — on your clients' documents, your business processes, your phone lines.</p>
+
+    <div class="services-grid">
+      <div class="svc">
+        <div class="svc-num">01</div>
+        <span class="svc-icon">🎙️</span>
+        <h3>AI Voice Agents</h3>
+        <p>Intelligent agents answering calls 24/7 in multiple languages. They qualify leads, handle bookings, answer questions and escalate to humans — with full context every time.</p>
+        <span class="svc-tag">Phone · WhatsApp · Web</span>
+      </div>
+      <div class="svc">
+        <div class="svc-num">02</div>
+        <span class="svc-icon">🧠</span>
+        <h3>RAG Knowledge Systems</h3>
+        <p>Train AI on your own documents — manuals, contracts, case files, product data. Your team queries years of knowledge in seconds. Private, GDPR-compliant, hosted by us.</p>
+        <span class="svc-tag">Private · Secure · On-demand</span>
+      </div>
+      <div class="svc">
+        <div class="svc-num">03</div>
+        <span class="svc-icon">🤖</span>
+        <h3>AI Agents & Automation</h3>
+        <p>Multi-step agents that handle complex workflows autonomously — document processing, compliance checks, supplier comms, reporting — freeing your team for real work.</p>
+        <span class="svc-tag">End-to-end · Autonomous</span>
+      </div>
+      <div class="svc">
+        <div class="svc-num">04</div>
+        <span class="svc-icon">📊</span>
+        <h3>Data Pipelines & MLOps</h3>
+        <p>From raw data to production ML models — we design, build and deploy the full data infrastructure that makes AI systems reliable, scalable and maintainable long-term.</p>
+        <span class="svc-tag">ML · Data Engineering · DevOps</span>
+      </div>
+      <div class="svc">
+        <div class="svc-num">05</div>
+        <span class="svc-icon">🔍</span>
+        <h3>LLM Fine-tuning & Evaluation</h3>
+        <p>When generic models aren't enough, we fine-tune on your domain data, run evals and optimize for your specific use case — accuracy, latency and cost all balanced.</p>
+        <span class="svc-tag">Domain-specific · Optimized</span>
+      </div>
+      <div class="svc">
+        <div class="svc-num">06</div>
+        <span class="svc-icon">🛡️</span>
+        <h3>AI Act & GDPR Compliance</h3>
+        <p>We build with European regulation built in from day one — not retrofitted. Full compliance architecture for companies deploying AI under the EU AI Act and GDPR.</p>
+        <span class="svc-tag">EU AI Act · GDPR · Audit-ready</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="section-inner">
+    <div class="problem-grid">
+      <div>
+        <span class="label">Why it's hard</span>
+        <h2 class="section-h">Most businesses know they need AI. Almost none know how to build it.</h2>
+        <p class="section-sub" style="margin-bottom:2rem">The technology exists. The gap is between knowing AI could help and having a production system that actually does.</p>
+        <a href="#contact" class="btn-dark" style="display:inline-block">Let's solve that →</a>
+      </div>
+      <div class="problem-cards">
+        <div class="pcard">
+          <div class="pcard-icon">💸</div>
+          <div class="pcard-text">
+            <strong>Hiring AI talent is prohibitively expensive</strong>
+            <p>A single ML engineer costs €80–150k/year before results. Most companies can't build an AI team — they need a partner who already has one.</p>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-icon">🧩</div>
+          <div class="pcard-text">
+            <strong>Generic tools don't fit your business</strong>
+            <p>ChatGPT and off-the-shelf SaaS are built for everyone, which makes them perfect for no one. They don't know your processes, your data or your industry.</p>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-icon">🏗️</div>
+          <div class="pcard-text">
+            <strong>No infrastructure to start from</strong>
+            <p>Most SMEs run on spreadsheets and email. Enterprise AI vendors require data pipelines and servers before they'll even answer your call. We don't.</p>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-icon">⚖️</div>
+          <div class="pcard-text">
+            <strong>Regulation is complex and moving fast</strong>
+            <p>EU AI Act, GDPR, sector-specific rules — companies that get AI wrong face fines up to €35M. Compliance needs to be designed in, not added later.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-bg" id="process">
+  <div class="section-inner">
+    <span class="label">The process</span>
+    <h2 class="section-h">From problem to live system.<br>In 4–6 weeks.</h2>
+    <p class="section-sub">You share your business. We handle every technical detail. Your involvement in setup is a handful of conversations and a folder of documents.</p>
+    <div class="process">
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-n">01</div>
+        <h3>Discovery call</h3>
+        <p>We understand your business, your workflows, your biggest bottleneck. You understand exactly what we'll build and what it costs. No obligation, no pitch deck.</p>
+        <span class="step-duration">1 hour</span>
+      </div>
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-n">02</div>
+        <h3>We build your system</h3>
+        <p>You share documents — manuals, contracts, FAQs, data. We engineer from scratch, train the AI on your specific business and set up all infrastructure.</p>
+        <span class="step-duration">3–5 weeks</span>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <h3>Launch & grow</h3>
+        <p>We test together, launch, monitor for 30 days. After that, we handle all maintenance, updates and scaling. You focus on your business.</p>
+        <span class="step-duration">Ongoing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="section-inner">
+    <span class="label">Industries we serve</span>
+    <h2 class="section-h">If your business has a problem,<br>we can probably solve it.</h2>
+    <p class="section-sub">We've built AI for industrial fault diagnosis, financial pipelines, regulatory compliance and more. The tech is the same — what changes is how we apply it.</p>
+    <div class="ind-grid">
+      <div class="ind">
+        <span class="ind-emoji">🏨</span>
+        <h3>Hospitality & Tourism</h3>
+        <p>AI voice agents for 24/7 multilingual guest calls, knowledge systems trained on your property, booking automation — for hotels, apartments and tourism businesses.</p>
+      </div>
+      <div class="ind">
+        <span class="ind-emoji">⚖️</span>
+        <h3>Legal & Professional Services</h3>
+        <p>Private RAG on case files and contracts, GDPR-safe document intake, AI Act compliance architecture — for law firms and consulting businesses.</p>
+      </div>
+      <div class="ind">
+        <span class="ind-emoji">🏗️</span>
+        <h3>Construction & Real Estate</h3>
+        <p>Document Q&A across project specs and permits, budget variance alerting, supplier communication automation — for firms with no internal IT team.</p>
+      </div>
+      <div class="ind">
+        <span class="ind-emoji">🏦</span>
+        <h3>Financial Services & Fintech</h3>
+        <p>Automated data pipelines, intelligent document processing, risk and compliance monitoring — with banking domain expertise built in from day one.</p>
+      </div>
+      <div class="ind">
+        <span class="ind-emoji">🏭</span>
+        <h3>Industrial & Manufacturing</h3>
+        <p>Fault diagnosis agents, predictive maintenance systems, operational knowledge bases — we've delivered production AI for industrial clients at scale.</p>
+      </div>
+      <div class="ind">
+        <span class="ind-emoji">🌐</span>
+        <h3>Any Other Sector</h3>
+        <p>Retail, healthcare, logistics, education, e-commerce — if you have repetitive processes, large document volumes or customer-facing communication, let's talk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="stack-bg">
+  <div class="section-inner">
+    <span class="label">Our tech stack</span>
+    <h2 class="section-h">We work with the best tools.<br>Not just the popular ones.</h2>
+    <p class="section-sub">We choose the right technology for your problem — not the one we're most comfortable with.</p>
+    <div class="tech-grid">
+      <span class="tech-pill hot">LangChain</span>
+      <span class="tech-pill hot">Claude API</span>
+      <span class="tech-pill hot">OpenAI</span>
+      <span class="tech-pill hot">RAG / Vector DBs</span>
+      <span class="tech-pill">Python</span>
+      <span class="tech-pill">FastAPI</span>
+      <span class="tech-pill">Docker / Kubernetes</span>
+      <span class="tech-pill">AWS / Azure / GCP</span>
+      <span class="tech-pill">PostgreSQL</span>
+      <span class="tech-pill">Pinecone / Weaviate</span>
+      <span class="tech-pill">Retell AI</span>
+      <span class="tech-pill">Twilio</span>
+      <span class="tech-pill">dbt</span>
+      <span class="tech-pill">Airflow</span>
+      <span class="tech-pill">MLflow</span>
+      <span class="tech-pill">Hugging Face</span>
+      <span class="tech-pill">n8n</span>
+      <span class="tech-pill">Whisper</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY WIGBURG -->
+<section id="why">
+  <div class="section-inner">
+    <span class="label">Why Wigburg</span>
+    <h2 class="section-h">Built by engineers.<br>Not a sales team.</h2>
+    <div class="why-grid">
+      <ul class="why-list">
+        <li class="why-item">
+          <div class="why-icon">⚙️</div>
+          <div class="why-text">
+            <strong>We build real production systems</strong>
+            <p>Multi-agent AI systems, fault-diagnosis engines, RAG pipelines — built and deployed for real industrial and commercial clients. Not demos. Not PoCs.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-icon">🔒</div>
+          <div class="why-text">
+            <strong>GDPR and EU AI Act compliant by design</strong>
+            <p>Your data stays in Europe, on infrastructure you control. We build with privacy and compliance wired in from the first line of code — not bolted on after.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-icon">🌍</div>
+          <div class="why-text">
+            <strong>Based in Spain, working globally</strong>
+            <p>Remote-first, fully bilingual in English and Spanish, and experienced working with clients across Europe. We operate on your timezone and in your language.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-icon">📞</div>
+          <div class="why-text">
+            <strong>You talk to the engineer building your system</strong>
+            <p>No account managers, no handoffs, no surprises on delivery day. The person you meet on the first call is the person who builds your system.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-icon">💶</div>
+          <div class="why-text">
+            <strong>SME pricing for enterprise-quality work</strong>
+            <p>Enterprise AI agencies charge €50k+ before they start. We're built for companies that need the same quality at a price that makes business sense.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="contact-card" id="contact">
+        <h3>Let's talk about your business.</h3>
+        <p>A 30-minute call is all it takes to know whether AI makes sense for your situation. No pitch decks. No pressure. Just an honest conversation about your problem.</p>
+        <div class="contact-detail"><span>📞</span><a href="tel:+34687334497">+34 687 334 497</a></div>
+        <div class="contact-detail"><span>✉️</span><a href="mailto:wigburggenai@gmail.com">wigburggenai@gmail.com</a></div>
+        <div class="contact-detail"><span>📍</span><a href="#">Barcelona, Spain · Working globally</a></div>
+        <a href="mailto:wigburggenai@gmail.com" class="btn-accent">Book a free consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-bg" id="pricing">
+  <div class="section-inner">
+    <span class="label">Pricing</span>
+    <h2 class="section-h">Transparent pricing.<br>No surprises after you sign.</h2>
+    <p class="section-sub">One-time setup fee covers the build. Monthly fee covers hosting, maintenance and updates. Cancel any time after the first 3 months.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <p class="price-name">Starter</p>
+        <p class="price-amount">Contact us for pricing</p>
+        <p class="price-note">Tailored to your project scope</p>
+        <ul class="price-feat">
+          <li>AI knowledge system for your business</li>
+          <li>Web or WhatsApp chat integration</li>
+          <li>2 languages supported</li>
+          <li>Monthly performance report</li>
+          <li>Email support</li>
+        </ul>
+        <a href="mailto:wigburggenai@gmail.com" class="btn-card btn-card-light">Get a quote</a>
+      </div>
+      <div class="price-card highlight">
+        <div class="price-pop">Most popular</div>
+        <p class="price-name">Professional</p>
+        <p class="price-amount">Contact us for pricing</p>
+        <p class="price-note">Tailored to your project scope</p>
+        <ul class="price-feat">
+          <li>AI Voice Agent (phone, 24/7)</li>
+          <li>RAG knowledge system — your documents</li>
+          <li>4 languages supported</li>
+          <li>Custom AI persona for your brand</li>
+          <li>Weekly reporting & analytics</li>
+          <li>Priority WhatsApp support</li>
+        </ul>
+        <a href="mailto:wigburggenai@gmail.com" class="btn-card btn-card-white">Get a quote</a>
+      </div>
+      <div class="price-card">
+        <p class="price-name">Enterprise</p>
+        <p class="price-amount">Custom</p>
+        <p class="price-note">Built for your exact requirements</p>
+        <ul class="price-feat">
+          <li>Multi-system AI architecture</li>
+          <li>Full MLOps & data pipeline</li>
+          <li>Unlimited scale</li>
+          <li>Custom language & integration support</li>
+          <li>Dedicated engineering contact</li>
+          <li>SLA guarantee</li>
+        </ul>
+        <a href="mailto:wigburggenai@gmail.com" class="btn-card btn-card-light">Talk to us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Your problem deserves<br>a real solution.</h2>
+  <p>30 minutes. No commitment. Just an honest conversation about what AI can do for your business.</p>
+  <a href="mailto:wigburggenai@gmail.com" class="btn-white">Book a free call today</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <a href="#" class="logo-f">Wigburg <span>GenAI</span></a>
+    <p>AI engineering for any industry · Barcelona, Spain</p>
+  </div>
+  <div class="footer-right">
+    <ul class="footer-socials">
+      <li><a href="https://www.instagram.com/wigburg_gen_ai/" target="_blank">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@wigburg_gen_ai" target="_blank">YouTube</a></li>
+      <li><a href="https://www.tiktok.com/@wigburg.gen.ai" target="_blank">TikTok</a></li>
+      <li><a href="https://x.com/WigburgA" target="_blank">X</a></li>
+    </ul>
+    <p>© 2026 Wigburg Gen AI · All rights reserved</p>
+  </div>
+</footer>
+
+<script>
+  const ham = document.getElementById('ham');
+  const mobNav = document.getElementById('mob-nav');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mobNav.classList.toggle('open');
+    document.body.style.overflow = mobNav.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mob-link').forEach(link => {
+    link.addEventListener('click', () => {
+      ham.classList.remove('open');
+      mobNav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+</body>
+</html>
