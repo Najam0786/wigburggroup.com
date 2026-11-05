@@ -11,12 +11,12 @@
    ═══════════════════════════════════════════════════════════════════ */
 :root {
   /* Core darks */
-  --void:    #020408;
-  --deep:    #060a14;
-  --bg:      #080c18;
-  --bg2:     #0c1121;
-  --card:    #0f1529;
-  --card2:   #131a32;
+  --void:    #000000;
+  --deep:    #040408;
+  --bg:      #060609;
+  --bg2:     #09090f;
+  --card:    #0d0d18;
+  --card2:   #111120;
   --border:  rgba(255,255,255,.05);
   --border2: rgba(255,255,255,.10);
 
@@ -72,7 +72,7 @@ a { color: inherit; text-decoration: none; cursor: none; }
 .cur-big  { width:20px!important; height:20px!important; }
 .cur-ring-big { width:56px!important; height:56px!important; border-color:rgba(0,212,255,.6)!important; }
 
-/* ── AURORA BG LAYER ── */
+/* ── AURORA BG LAYER — very subtle on pure black ── */
 #aurora {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   overflow: hidden;
@@ -80,18 +80,113 @@ a { color: inherit; text-decoration: none; cursor: none; }
 .aurora-band {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: .12;
-  animation: auroraFloat 18s ease-in-out infinite;
+  filter: blur(100px);
+  opacity: .05;
+  animation: auroraFloat 24s ease-in-out infinite;
 }
 .ab1 { width:70vw; height:50vw; background:radial-gradient(ellipse,var(--violet),transparent 70%); top:-15%; left:-20%; animation-delay:0s; }
 .ab2 { width:60vw; height:40vw; background:radial-gradient(ellipse,var(--cyan),transparent 70%); top:20%; right:-15%; animation-delay:-6s; }
-.ab3 { width:50vw; height:60vw; background:radial-gradient(ellipse,var(--amber),transparent 70%); bottom:-20%; left:20%; animation-delay:-12s; }
-.ab4 { width:40vw; height:30vw; background:radial-gradient(ellipse,var(--rose),transparent 70%); top:50%; right:10%; animation-delay:-4s; opacity:.07; }
+.ab3 { width:50vw; height:60vw; background:radial-gradient(ellipse,var(--amber),transparent 70%); bottom:-20%; left:20%; animation-delay:-12s; opacity:.03; }
+.ab4 { width:40vw; height:30vw; background:radial-gradient(ellipse,var(--rose),transparent 70%); top:50%; right:10%; animation-delay:-4s; opacity:.03; }
 @keyframes auroraFloat {
-  0%,100% { transform: translate(0,0) scale(1); opacity:.12; }
-  33% { transform: translate(4%,3%) scale(1.08); opacity:.16; }
-  66% { transform: translate(-3%,5%) scale(.94); opacity:.10; }
+  0%,100% { transform: translate(0,0) scale(1); }
+  33% { transform: translate(4%,3%) scale(1.08); }
+  66% { transform: translate(-3%,5%) scale(.94); }
+}
+
+/* ── NEON CSS SHAPES for hero ── */
+.neon-shapes { position:absolute; inset:0; pointer-events:none; z-index:1; overflow:hidden; }
+/* Large triangle outline — right side */
+.ns-tri-lg {
+  position:absolute; top:50%; right:8%;
+  width:320px; height:280px;
+  transform:translate(0,-50%);
+  animation: nsTri1 14s ease-in-out infinite;
+  opacity:0; animation-delay:.5s; animation-fill-mode:forwards;
+}
+.ns-tri-lg::before {
+  content:'';
+  position:absolute; inset:0;
+  clip-path:polygon(50% 0%, 100% 100%, 0% 100%);
+  border:0; background:transparent;
+  box-shadow: none;
+  outline:none;
+}
+.ns-tri-lg-inner {
+  position:absolute; inset:0;
+  clip-path:polygon(50% 0%, 100% 100%, 0% 100%);
+  background: transparent;
+  /* SVG triangle outline via border technique */
+  border:none;
+  /* Use an SVG polygon stroke embedded */
+}
+/* Triangle shapes via SVG inline */
+.ns-tri {
+  position:absolute;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
+}
+.ns-tri svg { width:100%; height:100%; }
+
+/* Medium right triangle */
+.ns-t1 {
+  width:300px; height:260px;
+  top:50%; right:7%;
+  transform:translate(0,-50%);
+  animation:nsTri1 16s ease-in-out infinite;
+  opacity:0; animation-fill-mode:forwards;
+  animation-delay:.4s;
+}
+/* Smaller rotated triangle above */
+.ns-t2 {
+  width:160px; height:138px;
+  top:16%; right:28%;
+  animation:nsTri2 12s ease-in-out infinite;
+  opacity:0; animation-fill-mode:forwards;
+  animation-delay:.8s;
+}
+/* Tiny triangle lower-left */
+.ns-t3 {
+  width:90px; height:78px;
+  bottom:22%; left:4%;
+  animation:nsTri3 10s ease-in-out infinite;
+  opacity:0; animation-fill-mode:forwards;
+  animation-delay:1.2s;
+}
+/* Chevron / V shape right side */
+.ns-chev {
+  position:absolute;
+  right:5%; top:50%; transform:translateY(-50%);
+  width:40px; height:200px;
+  animation:nsChev 8s ease-in-out infinite;
+  opacity:0; animation-fill-mode:forwards;
+  animation-delay:1.0s;
+}
+.ns-chev svg { width:100%; height:100%; }
+
+@keyframes nsTri1 {
+  0%  { opacity:0; transform:translate(0,-50%) rotate(0deg); }
+  5%  { opacity:1; }
+  50% { transform:translate(2%,-52%) rotate(2deg); opacity:.85; }
+  100%{ transform:translate(0,-50%) rotate(0deg); opacity:.7; }
+}
+@keyframes nsTri2 {
+  0%  { opacity:0; transform:rotate(0deg); }
+  5%  { opacity:1; }
+  50% { transform:rotate(-8deg) translate(-3px,-6px); opacity:.6; }
+  100%{ transform:rotate(0deg); opacity:.5; }
+}
+@keyframes nsTri3 {
+  0%  { opacity:0; transform:rotate(180deg); }
+  5%  { opacity:.7; }
+  50% { transform:rotate(185deg) translate(4px,4px); opacity:.5; }
+  100%{ transform:rotate(180deg); opacity:.4; }
+}
+@keyframes nsChev {
+  0%  { opacity:0; transform:translateY(-50%); }
+  5%  { opacity:.6; }
+  50% { transform:translateY(-52%) translateX(4px); opacity:.4; }
+  100%{ transform:translateY(-50%); opacity:.5; }
 }
 
 /* ── NAV ── */
@@ -120,6 +215,12 @@ nav.scrolled { background:rgba(6,10,20,.88); backdrop-filter:blur(24px); }
 }
 .nav-cta:hover { box-shadow:0 0 40px rgba(123,92,240,.5); transform:translateY(-2px); }
 @media(max-width:700px){.nav-links{display:none;}}
+
+/* ══ HERO THREE.JS ══ */
+#three-hero {
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+}
+#three-hero canvas { display:block; width:100%!important; height:100%!important; }
 
 /* ══ HERO ══ */
 .hero {
@@ -248,6 +349,8 @@ nav.scrolled { background:rgba(6,10,20,.88); backdrop-filter:blur(24px); }
   max-width:var(--max); margin:0 auto;
   padding: 120px max(60px,env(safe-area-inset-left,0px)) 100px max(60px,env(safe-area-inset-right,0px));
   width:100%;
+  text-align:center;
+  display:flex; flex-direction:column; align-items:center;
 }
 .hero-badge {
   display:inline-flex; align-items:center; gap:10px;
@@ -267,8 +370,9 @@ nav.scrolled { background:rgba(6,10,20,.88); backdrop-filter:blur(24px); }
 
 h1.h1 {
   font-family:'Syne',sans-serif; font-weight:800;
-  font-size:clamp(44px,8vw,96px);
-  line-height:1.0; letter-spacing:-.04em; max-width:880px;
+  font-size:clamp(48px,8vw,100px);
+  line-height:1.0; letter-spacing:-.04em; max-width:900px;
+  text-wrap:balance;
 }
 h1.h1 .w {
   display:inline-block;
@@ -281,12 +385,13 @@ h1.h1 .violet { color:var(--violet2); }
 h1.h1 .dim { color:var(--fg3); }
 
 .hero-sub {
-  max-width:520px; font-size:17px; color:var(--fg2);
+  max-width:600px; font-size:18px; color:var(--fg2);
   margin-top:28px; line-height:1.78;
   opacity:0; animation:fadeUp .7s 1.5s forwards;
+  text-align:center;
 }
 .hero-btns {
-  display:flex; gap:14px; margin-top:48px; flex-wrap:wrap;
+  display:flex; gap:14px; margin-top:48px; flex-wrap:wrap; justify-content:center;
   opacity:0; animation:fadeUp .7s 1.8s forwards;
 }
 .btn-p {
@@ -395,9 +500,9 @@ h2.sh { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(32px,5vw
 
 /* ══ INDUSTRIES ══ */
 .ind-section { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-.ind-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
-@media(max-width:900px){.ind-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:560px){.ind-grid{grid-template-columns:repeat(2,1fr);}}
+.ind-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media(max-width:900px){.ind-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.ind-grid{grid-template-columns:1fr;}}
 
 .ind-card {
   background:var(--card); border:1px solid var(--border);
@@ -446,8 +551,18 @@ h2.sh { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(32px,5vw
 @media(max-width:420px){.how-grid{grid-template-columns:1fr;}}
 .how-step { background:var(--card); padding:44px 32px; display:flex;flex-direction:column;gap:16px; transition:background .25s; position:relative; overflow:hidden; }
 .how-step:hover { background:var(--card2); }
-.how-num { font-family:'Syne',sans-serif;font-size:64px;font-weight:800;line-height:1;letter-spacing:-.04em; background:linear-gradient(135deg,var(--violet2),var(--cyan)); -webkit-background-clip:text;-webkit-text-fill-color:transparent; background-clip:text; opacity:.25; transition:opacity .3s; }
-.how-step:hover .how-num { opacity:.45; }
+.how-num {
+  font-family:'Syne',sans-serif; font-size:80px; font-weight:800; line-height:1; letter-spacing:-.04em;
+  /* neon outline style: transparent fill, vivid stroke glow */
+  -webkit-text-stroke: 1.5px var(--cyan);
+  color: transparent;
+  text-shadow: 0 0 20px rgba(0,212,255,.5), 0 0 40px rgba(0,212,255,.2);
+  opacity:.7; transition:opacity .3s, text-shadow .3s;
+}
+.how-step:hover .how-num {
+  opacity:1;
+  text-shadow: 0 0 24px rgba(0,212,255,.8), 0 0 60px rgba(0,212,255,.4), 0 0 100px rgba(123,92,240,.3);
+}
 .how-title { font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--fg); }
 .how-desc { font-size:13.5px;color:var(--fg2);line-height:1.7; }
 /* ping ring canvas inside each step */
@@ -481,6 +596,66 @@ h2.sh { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(32px,5vw
 @media(max-width:900px){ .why-globe { display:none; } }
 /* section intro position:relative for globe */
 .why-intro-wrap { position:relative; overflow:visible; margin-bottom:44px; }
+
+/* ══ TAGLINE STRIP ══ */
+.tagline-strip {
+  border-top: 1px solid rgba(0,212,255,.12);
+  border-bottom: 1px solid rgba(0,212,255,.08);
+  padding-block: 56px;
+  background: var(--void);
+  position: relative; overflow:hidden;
+}
+.tagline-strip::before {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(90deg, transparent 0%, rgba(0,212,255,.04) 50%, transparent 100%);
+  pointer-events:none;
+}
+.tagline-inner {
+  max-width: var(--max); margin:0 auto; width:100%;
+  padding-inline: max(60px,env(safe-area-inset-left,0px)) max(60px,env(safe-area-inset-right,0px));
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  align-items: center;
+  gap: 0;
+}
+@media(max-width:900px){
+  .tagline-inner { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:520px){
+  .tagline-inner { grid-template-columns: 1fr; }
+}
+.tl-pill {
+  display: flex; flex-direction:column; align-items: center; justify-content:center;
+  gap: 10px; padding: 24px 32px;
+  position: relative; text-align:center;
+  border-right: 1px solid rgba(255,255,255,.06);
+}
+.tl-pill:last-child { border-right:none; }
+@media(max-width:900px){
+  .tl-pill:nth-child(2) { border-right:none; }
+  .tl-pill:nth-child(3) { border-right: 1px solid rgba(255,255,255,.06); }
+}
+@media(max-width:520px){
+  .tl-pill { border-right:none; border-bottom: 1px solid rgba(255,255,255,.06); }
+  .tl-pill:last-child { border-bottom:none; }
+}
+/* ── WIREFRAME ROTATING ICONS ── */
+.tl-icon-wrap {
+  width:80px; height:80px;
+  position:relative; flex-shrink:0;
+}
+.tl-canvas {
+  width:80px; height:80px;
+  display:block;
+}
+.tl-label {
+  font-family:'Syne',sans-serif; font-weight:800;
+  font-size: clamp(13px,1vw,15px);
+  letter-spacing:.05em; text-transform:uppercase;
+  color: var(--fg);
+  line-height:1.1;
+  text-align:center;
+}
 
 /* ══ CONTACT ══ */
 .contact-section { background:var(--bg2); border-top:1px solid var(--border); }
@@ -523,8 +698,8 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
 /* ══ DARK-FIRST ONE-THEME OVERRIDES for light mode safety ══ */
 @media(prefers-color-scheme:light) {
   :root:not([data-theme="light"]) {
-    --void:#020408; --deep:#060a14; --bg:#080c18; --bg2:#0c1121;
-    --card:#0f1529; --card2:#131a32; color-scheme:dark;
+    --void:#000000; --deep:#040408; --bg:#060609; --bg2:#09090f;
+    --card:#0d0d18; --card2:#111120; color-scheme:dark;
   }
 }
 </style>
@@ -557,37 +732,69 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="orb-field" aria-hidden="true">
-    <div class="orb"></div>
-    <div class="orb"></div>
-    <div class="orb"></div>
-    <div class="orb"></div>
-    <!-- floating dots -->
-    <div class="tri-dot"></div>
-    <div class="tri-dot"></div>
-    <div class="tri-dot"></div>
-    <div class="tri-dot"></div>
-    <div class="tri-dot"></div>
+  <!-- Neon CSS shapes replacing broken canvas -->
+  <div class="neon-shapes" aria-hidden="true">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="gf1" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="gf2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="gf3" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+
+      <!-- ═══ LEFT SIDE — 3 triangles ═══ -->
+
+      <!-- L1: Large cyan triangle, upper-left -->
+      <polygon points="180,40 420,480 -60,480"
+        stroke="#00d4ff" stroke-width="2"
+        fill="transparent"
+        filter="url(#gf1)" opacity=".75">
+        <animateTransform attributeName="transform" type="translate" values="0,0;8,12;0,0" dur="15s" repeatCount="indefinite"/>
+      </polygon>
+
+      <!-- L2: Medium violet triangle, mid-left, inverted -->
+      <polygon points="100,820 340,460 -140,460"
+        stroke="#a07aff" stroke-width="2"
+        fill="transparent"
+        filter="url(#gf2)" opacity=".7">
+        <animateTransform attributeName="transform" type="translate" values="0,0;-6,10;0,0" dur="18s" repeatCount="indefinite"/>
+      </polygon>
+
+      <!-- L3: Small amber triangle, lower-left corner -->
+      <polygon points="60,680 220,900 -100,900"
+        stroke="#f0a832" stroke-width="1.8"
+        fill="transparent"
+        filter="url(#gf3)" opacity=".65">
+        <animateTransform attributeName="transform" type="translate" values="0,0;5,-8;0,0" dur="12s" repeatCount="indefinite"/>
+      </polygon>
+
+      <!-- ═══ RIGHT SIDE — 3 triangles ═══ -->
+
+      <!-- R1: Large violet triangle, right-centre — main hero shape -->
+      <polygon points="1150,60 1430,560 870,560"
+        stroke="#a07aff" stroke-width="2"
+        fill="transparent"
+        filter="url(#gf1)" opacity=".8">
+        <animateTransform attributeName="transform" type="translate" values="0,0;-10,-12;0,0" dur="16s" repeatCount="indefinite"/>
+      </polygon>
+
+      <!-- R2: Medium green triangle, upper-right -->
+      <polygon points="1080,20 1300,340 860,340"
+        stroke="#00ffaa" stroke-width="1.8"
+        fill="transparent"
+        filter="url(#gf2)" opacity=".7">
+        <animateTransform attributeName="transform" type="translate" values="0,0;8,10;0,0" dur="13s" repeatCount="indefinite"/>
+      </polygon>
+
+      <!-- R3: Small rose triangle, lower-right, inverted -->
+      <polygon points="1280,880 1480,520 1080,520"
+        stroke="#ff4488" stroke-width="1.8"
+        fill="transparent"
+        filter="url(#gf3)" opacity=".65">
+        <animateTransform attributeName="transform" type="translate" values="0,0;-6,8;0,0" dur="11s" repeatCount="indefinite"/>
+      </polygon>
+    </svg>
   </div>
-  <!-- 3D rotating ring -->
-  <div id="ring3d" aria-hidden="true">
-    <div class="ring3d-band"></div>
-    <div class="ring3d-band"></div>
-    <div class="ring3d-band"></div>
-    <div class="ring3d-band"></div>
-    <div class="ring3d-band"></div>
-    <div class="ring3d-band"></div>
-  </div>
-  <!-- 3D wireframe cube -->
-  <div id="cube3d" aria-hidden="true">
-    <div class="cube-face front"></div>
-    <div class="cube-face back"></div>
-    <div class="cube-face left"></div>
-    <div class="cube-face right"></div>
-    <div class="cube-face top"></div>
-    <div class="cube-face bottom"></div>
-  </div>
+
   <div class="hero-content">
     <div class="hero-badge">
       <div class="badge-pulse"></div>
@@ -605,6 +812,28 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
     <div class="scroll-ln"></div>
   </div>
 </section>
+
+<!-- ═══ TAGLINE STRIP ═══ -->
+<div class="tagline-strip" aria-hidden="true">
+  <div class="tagline-inner">
+    <div class="tl-pill">
+      <div class="tl-icon-wrap"><canvas class="tl-canvas" id="wf-pyramid" width="160" height="160"></canvas></div>
+      <div class="tl-label">Production AI</div>
+    </div>
+    <div class="tl-pill">
+      <div class="tl-icon-wrap"><canvas class="tl-canvas" id="wf-cube" width="160" height="160"></canvas></div>
+      <div class="tl-label">Compliance-Ready</div>
+    </div>
+    <div class="tl-pill">
+      <div class="tl-icon-wrap"><canvas class="tl-canvas" id="wf-octa" width="160" height="160"></canvas></div>
+      <div class="tl-label">Domain-Deep</div>
+    </div>
+    <div class="tl-pill">
+      <div class="tl-icon-wrap"><canvas class="tl-canvas" id="wf-torus" width="160" height="160"></canvas></div>
+      <div class="tl-label">Your Stack</div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ CAPABILITIES ═══ -->
 <section id="capabilities" style="background:var(--deep); border-top:1px solid var(--border); position:relative; overflow:hidden;">
@@ -689,13 +918,7 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
       <div class="ind-card rv rv-d3"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="hospitality"></canvas></div><div class="ind-name">Hospitality</div><div class="ind-note">Hotels, restaurants, catering, food &amp; beverage, events</div></div>
       <div class="ind-card rv rv-d4"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="retail"></canvas></div><div class="ind-name">Retail &amp; E-commerce</div><div class="ind-note">Inventory, demand planning, personalisation, returns</div></div>
       <div class="ind-card rv rv-d1"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="health"></canvas></div><div class="ind-name">Healthcare</div><div class="ind-note">Clinical documentation, admin automation, triage support</div></div>
-      <div class="ind-card rv rv-d2"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="legal"></canvas></div><div class="ind-name">Legal &amp; Professional</div><div class="ind-note">Contract review, knowledge retrieval, billing automation</div></div>
-      <div class="ind-card rv rv-d3"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="mfg"></canvas></div><div class="ind-name">Manufacturing</div><div class="ind-note">Quality control, predictive maintenance, production optimisation</div></div>
-      <div class="ind-card rv rv-d4"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="logistics"></canvas></div><div class="ind-name">Logistics &amp; Supply Chain</div><div class="ind-note">Fleet management, route optimisation, demand sensing</div></div>
-      <div class="ind-card rv rv-d1"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="realestate"></canvas></div><div class="ind-name">Real Estate</div><div class="ind-note">Property management, tenant services, maintenance scheduling</div></div>
-      <div class="ind-card rv rv-d2"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="edu"></canvas></div><div class="ind-name">Education &amp; Training</div><div class="ind-note">Learning assistants, content generation, assessment tools</div></div>
-      <div class="ind-card rv rv-d3"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="public"></canvas></div><div class="ind-name">Public Sector</div><div class="ind-note">Document processing, citizen services, compliance reporting</div></div>
-      <div class="ind-card rv rv-d4"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="media"></canvas></div><div class="ind-name">Media &amp; Content</div><div class="ind-note">Automated pipelines, translation, summarisation, publishing</div></div>
+      <div class="ind-card rv rv-d2"><div class="ind-icon-wrap"><canvas class="ind-icon-cv" data-ind="mfg"></canvas></div><div class="ind-name">Manufacturing</div><div class="ind-note">Quality control, predictive maintenance, production optimisation</div></div>
     </div>
   </div>
 </section>
@@ -703,6 +926,32 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
 <!-- ═══ HOW WE WORK ═══ -->
 <section id="how" style="background:var(--deep); position:relative; overflow:hidden;">
   <div class="scanlines" aria-hidden="true"></div>
+  <!-- Triangle accents -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+    <defs>
+      <filter id="hwgf" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <!-- Left: cyan top, amber bottom-inverted -->
+    <polygon points="120,20 300,340 -60,340" stroke="#00d4ff" stroke-width="1.8" fill="transparent" filter="url(#hwgf)" opacity=".5">
+      <animateTransform attributeName="transform" type="translate" values="0,0;6,10;0,0" dur="14s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="80,580 260,320 -100,320" stroke="#f0a832" stroke-width="1.6" fill="transparent" filter="url(#hwgf)" opacity=".4">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-5,8;0,0" dur="17s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="40,420 160,580 -80,580" stroke="#a07aff" stroke-width="1.4" fill="transparent" filter="url(#hwgf)" opacity=".35">
+      <animateTransform attributeName="transform" type="translate" values="0,0;4,-6;0,0" dur="11s" repeatCount="indefinite"/>
+    </polygon>
+    <!-- Right: violet top, green mid, rose bottom-inverted -->
+    <polygon points="1320,20 1500,340 1140,340" stroke="#a07aff" stroke-width="1.8" fill="transparent" filter="url(#hwgf)" opacity=".5">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-8,-10;0,0" dur="15s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1260,180 1420,420 1100,420" stroke="#00ffaa" stroke-width="1.6" fill="transparent" filter="url(#hwgf)" opacity=".4">
+      <animateTransform attributeName="transform" type="translate" values="0,0;6,8;0,0" dur="12s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1360,580 1520,300 1200,300" stroke="#ff4488" stroke-width="1.4" fill="transparent" filter="url(#hwgf)" opacity=".35">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-4,6;0,0" dur="10s" repeatCount="indefinite"/>
+    </polygon>
+  </svg>
   <div class="wrap">
     <div class="intro-row rv">
       <div>
@@ -779,7 +1028,31 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
 <div class="sec-divider"><canvas id="divider2"></canvas></div>
 
 <!-- ═══ CONTACT ═══ -->
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section" style="position:relative;overflow:hidden;">
+  <!-- Triangle accents -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+    <defs>
+      <filter id="ctgf" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <polygon points="140,30 360,400 -80,400" stroke="#00d4ff" stroke-width="1.8" fill="transparent" filter="url(#ctgf)" opacity=".45">
+      <animateTransform attributeName="transform" type="translate" values="0,0;7,10;0,0" dur="16s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="60,560 240,280 -120,280" stroke="#a07aff" stroke-width="1.6" fill="transparent" filter="url(#ctgf)" opacity=".38">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-5,8;0,0" dur="19s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="20,440 160,620 -120,620" stroke="#f0a832" stroke-width="1.4" fill="transparent" filter="url(#ctgf)" opacity=".32">
+      <animateTransform attributeName="transform" type="translate" values="0,0;4,-5;0,0" dur="13s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1300,30 1520,400 1080,400" stroke="#a07aff" stroke-width="1.8" fill="transparent" filter="url(#ctgf)" opacity=".45">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-8,-10;0,0" dur="14s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1240,200 1440,480 1040,480" stroke="#00ffaa" stroke-width="1.6" fill="transparent" filter="url(#ctgf)" opacity=".38">
+      <animateTransform attributeName="transform" type="translate" values="0,0;6,8;0,0" dur="11s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="1380,560 1540,280 1220,280" stroke="#ff4488" stroke-width="1.4" fill="transparent" filter="url(#ctgf)" opacity=".32">
+      <animateTransform attributeName="transform" type="translate" values="0,0;-4,6;0,0" dur="18s" repeatCount="indefinite"/>
+    </polygon>
+  </svg>
   <div class="wrap">
     <div class="contact-box rv">
       <div class="contact-mesh"></div>
@@ -849,45 +1122,6 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
   window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
 })();
 
-/* ═══ HERO NEURAL NET CANVAS ═══ */
-(function(){
-  const cv=document.getElementById('hero-canvas');
-  if(!cv)return;
-  const ctx=cv.getContext('2d');
-  let W,H,nodes=[];
-  const N=70, DIST=150;
-  function resize(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
-  function mkNode(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.38,vy:(Math.random()-.5)*.38,r:1.2+Math.random()*2.4,t:Math.random()*Math.PI*2,col:['cyan','violet','amber'][Math.floor(Math.random()*3)]};}
-  const COLS={cyan:'rgba(0,212,255,',violet:'rgba(123,92,240,',amber:'rgba(240,168,50,'};
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    for(let i=0;i<nodes.length;i++){for(let j=i+1;j<nodes.length;j++){
-      const a=nodes[i],b=nodes[j];
-      const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
-      if(d<DIST){
-        const al=(1-d/DIST)*.3;
-        const col=(a.col==='cyan'||b.col==='cyan')?COLS.cyan:COLS.violet;
-        ctx.strokeStyle=col+al+')';ctx.lineWidth=.8;
-        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
-      }
-    }}
-    nodes.forEach(n=>{
-      n.t+=.022;
-      const glow=.5+.5*Math.sin(n.t);
-      const c=COLS[n.col];
-      const g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*8);
-      g.addColorStop(0,c+(.3*glow)+')');g.addColorStop(1,c+'0)');
-      ctx.fillStyle=g;ctx.beginPath();ctx.arc(n.x,n.y,n.r*8,0,Math.PI*2);ctx.fill();
-      ctx.fillStyle=c+(.8+.2*glow)+')';ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fill();
-      n.x+=n.vx;n.y+=n.vy;
-      if(n.x<-20)n.x=W+20;if(n.x>W+20)n.x=-20;
-      if(n.y<-20)n.y=H+20;if(n.y>H+20)n.y=-20;
-    });
-    requestAnimationFrame(draw);
-  }
-  resize();nodes=Array.from({length:N},mkNode);draw();
-  window.addEventListener('resize',resize,{passive:true});
-})();
 
 /* ═══ HERO WORD REVEAL ═══ */
 (function(){
@@ -1470,5 +1704,150 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
     });
   },{threshold:.3});
   document.querySelectorAll('.intro-row').forEach(el=>obs.observe(el));
+})();
+
+/* ══ WIREFRAME 3D ICONS ══ */
+(function(){
+  const DPR = Math.min(window.devicePixelRatio||1,2);
+
+  /* project 3D point to 2D canvas coords */
+  function project(v, cx, cy, fov){
+    const z = v[2] + fov;
+    const scale = fov / z;
+    return [cx + v[0]*scale, cy + v[1]*scale, scale];
+  }
+
+  /* rotate point around X and Y axes */
+  function rotXY(v, rx, ry){
+    // rotate Y
+    let x = v[0]*Math.cos(ry) - v[2]*Math.sin(ry);
+    let z = v[0]*Math.sin(ry) + v[2]*Math.cos(ry);
+    // rotate X
+    let y = v[1]*Math.cos(rx) - z*Math.sin(rx);
+    z     = v[1]*Math.sin(rx) + z*Math.cos(rx);
+    return [x, y, z];
+  }
+
+  function drawEdges(ctx, verts, edges, cx, cy, fov, col, glow){
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    // sort edges by avg Z (painter's algo — back to front)
+    const proj = verts.map(v => project(v, cx, cy, fov));
+    const sorted = [...edges].sort((a,b)=>{
+      const za = (verts[a[0]][2]+verts[a[1]][2])/2;
+      const zb = (verts[b[0]][2]+verts[b[1]][2])/2;
+      return za - zb;
+    });
+    sorted.forEach(([i,j])=>{
+      const p1 = proj[i], p2 = proj[j];
+      // fade by depth
+      const alpha = 0.4 + 0.6*((p1[2]+p2[2])/2);
+      ctx.beginPath();
+      ctx.moveTo(p1[0], p1[1]);
+      ctx.lineTo(p2[0], p2[1]);
+      ctx.strokeStyle = col;
+      ctx.globalAlpha = Math.min(alpha, 1);
+      ctx.lineWidth = 1.5 * DPR;
+      ctx.shadowColor = glow;
+      ctx.shadowBlur = 10 * DPR;
+      ctx.stroke();
+    });
+    ctx.globalAlpha = 1;
+    ctx.shadowBlur = 0;
+  }
+
+  /* ── PYRAMID (tetrahedron) ── */
+  (function(){
+    const c = document.getElementById('wf-pyramid'); if(!c) return;
+    c.width = 80*DPR; c.height = 80*DPR;
+    const ctx = c.getContext('2d');
+    const cx = 40*DPR, cy = 40*DPR, fov = 160*DPR, r = 28*DPR;
+    const base = [[r,r,0],[-r,r,0],[-r,-r,0],[r,-r,0]]; // square base
+    const apex = [0,-r*1.4,0];
+    const verts0 = [...base, apex];
+    const edges = [[0,1],[1,2],[2,3],[3,0],[0,4],[1,4],[2,4],[3,4]];
+    let t=0;
+    function frame(){
+      t += 0.012;
+      const verts = verts0.map(v=>rotXY(v, t*0.5, t));
+      drawEdges(ctx, verts, edges, cx, cy, fov, 'rgba(0,212,255,0.9)', '#00d4ff');
+      requestAnimationFrame(frame);
+    }
+    frame();
+  })();
+
+  /* ── CUBE ── */
+  (function(){
+    const c = document.getElementById('wf-cube'); if(!c) return;
+    c.width = 80*DPR; c.height = 80*DPR;
+    const ctx = c.getContext('2d');
+    const cx = 40*DPR, cy = 40*DPR, fov = 160*DPR, r = 24*DPR;
+    const verts0 = [
+      [-r,-r,-r],[r,-r,-r],[r,r,-r],[-r,r,-r],
+      [-r,-r, r],[r,-r, r],[r,r, r],[-r,r, r]
+    ];
+    const edges = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+    let t=0;
+    function frame(){
+      t += 0.008;
+      const verts = verts0.map(v=>rotXY(v, t*0.4, t*0.7));
+      drawEdges(ctx, verts, edges, cx, cy, fov, 'rgba(160,122,255,0.9)', '#a07aff');
+      requestAnimationFrame(frame);
+    }
+    frame();
+  })();
+
+  /* ── OCTAHEDRON ── */
+  (function(){
+    const c = document.getElementById('wf-octa'); if(!c) return;
+    c.width = 80*DPR; c.height = 80*DPR;
+    const ctx = c.getContext('2d');
+    const cx = 40*DPR, cy = 40*DPR, fov = 160*DPR, r = 28*DPR;
+    const verts0 = [
+      [r,0,0],[-r,0,0],[0,r,0],[0,-r,0],[0,0,r],[0,0,-r]
+    ];
+    const edges = [[0,2],[0,3],[0,4],[0,5],[1,2],[1,3],[1,4],[1,5],[2,4],[2,5],[3,4],[3,5]];
+    let t=0;
+    function frame(){
+      t += 0.01;
+      const verts = verts0.map(v=>rotXY(v, t*0.6, t));
+      drawEdges(ctx, verts, edges, cx, cy, fov, 'rgba(0,212,255,0.9)', '#00d4ff');
+      requestAnimationFrame(frame);
+    }
+    frame();
+  })();
+
+  /* ── TORUS (approximated as 2 rings + spokes) ── */
+  (function(){
+    const c = document.getElementById('wf-torus'); if(!c) return;
+    c.width = 80*DPR; c.height = 80*DPR;
+    const ctx = c.getContext('2d');
+    const cx = 40*DPR, cy = 40*DPR, fov = 160*DPR;
+    const R = 22*DPR, r = 10*DPR, segs = 12, tubes = 10;
+    // Build torus verts
+    const verts0 = [];
+    const edges = [];
+    for(let i=0;i<segs;i++){
+      const a = (i/segs)*Math.PI*2;
+      for(let j=0;j<tubes;j++){
+        const b = (j/tubes)*Math.PI*2;
+        const x = (R + r*Math.cos(b))*Math.cos(a);
+        const y = r*Math.sin(b);
+        const z = (R + r*Math.cos(b))*Math.sin(a);
+        verts0.push([x, y, z]);
+        const next_i = ((i+1)%segs)*tubes + j;
+        const next_j = i*tubes + (j+1)%tubes;
+        edges.push([i*tubes+j, next_i]);
+        edges.push([i*tubes+j, next_j]);
+      }
+    }
+    let t=0;
+    function frame(){
+      t += 0.009;
+      const verts = verts0.map(v=>rotXY(v, t*0.5, t*0.8));
+      drawEdges(ctx, verts, edges, cx, cy, fov, 'rgba(160,122,255,0.9)', '#a07aff');
+      requestAnimationFrame(frame);
+    }
+    frame();
+  })();
 })();
 </script>
