@@ -264,21 +264,6 @@ nav.scrolled { background:rgba(6,10,20,.88); backdrop-filter:blur(24px); }
   position:absolute; inset:0; width:100%; height:100%;
   z-index:0; opacity:.85;
 }
-/* ── HERO MOBILE ── */
-@media(max-width:700px){
-  .hero { min-height:auto; padding-top:88px; padding-bottom:60px; align-items:flex-start; }
-  .neon-shapes { display:none; }
-  #ring3d { display:none; }
-  .orb { display:none; }
-  .hero-content {
-    padding: 32px max(24px,env(safe-area-inset-left,0px)) 48px max(24px,env(safe-area-inset-right,0px));
-  }
-  h1.h1 { font-size: clamp(36px,10vw,60px); }
-  .hero-sub { font-size:15px; }
-  .hero-btns { flex-direction:column; gap:12px; align-items:stretch; }
-  .btn-p, .btn-s { text-align:center; }
-}
-
 /* 3D floating orbs */
 .orb-field { position:absolute; inset:0; pointer-events:none; z-index:1; perspective:600px; }
 .orb {
@@ -721,14 +706,6 @@ h2.sh { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(32px,5vw
   width:80px; height:80px;
   display:block;
 }
-@media(max-width:700px){
-  .tagline-strip { padding-block:32px; }
-  .tagline-inner { grid-template-columns:repeat(2,1fr)!important; }
-  .tl-pill { padding:16px 12px; }
-  .tl-icon-wrap { width:56px; height:56px; }
-  .tl-canvas { width:56px; height:56px; }
-  .tl-label { font-size:11px; }
-}
 .tl-label {
   font-family:'Syne',sans-serif; font-weight:800;
   font-size: clamp(13px,1vw,15px);
@@ -783,6 +760,80 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
     --card:#0d0d18; --card2:#111120; color-scheme:dark;
   }
 }
+
+/* ══════════════════════════════════════════════════
+   COMPREHENSIVE MOBILE STYLES  (≤700px)
+   ══════════════════════════════════════════════════ */
+@media(max-width:700px){
+
+  /* ── Global padding reset ── */
+  .wrap {
+    padding-inline: max(20px,env(safe-area-inset-left,0px)) max(20px,env(safe-area-inset-right,0px));
+  }
+  section { padding-block: 64px; }
+
+  /* ── Nav ── */
+  .nav-cta { display:none; }
+  .nav-hamburger { display:flex; }
+
+  /* ── Hero ── */
+  .hero { min-height:auto; padding-top:80px; padding-bottom:56px; align-items:flex-start; }
+  .neon-shapes, #ring3d, .orb-field { display:none; }
+  .hero-content {
+    padding: 24px max(20px,env(safe-area-inset-left,0px)) 40px max(20px,env(safe-area-inset-right,0px));
+  }
+  h1.h1 { font-size: clamp(32px,9vw,52px); letter-spacing:-.03em; }
+  .hero-sub { font-size:14px; max-width:100%; margin-top:18px; }
+  .hero-btns { flex-direction:column; gap:10px; align-items:stretch; margin-top:28px; }
+  .btn-p, .btn-o { text-align:center; justify-content:center; padding:14px 20px; }
+  .hero-badge { margin-bottom:20px; }
+  .scroll-hint { display:none; }
+
+  /* ── Tagline strip ── */
+  .tagline-strip { padding-block:28px; }
+  .tagline-inner { grid-template-columns:repeat(2,1fr)!important; padding-inline:20px; }
+  .tl-pill { padding:14px 10px; border-right:none; border-bottom:1px solid rgba(255,255,255,.06); }
+  .tl-icon-wrap { width:48px; height:48px; }
+  .tl-canvas { width:48px!important; height:48px!important; }
+  .tl-label { font-size:11px; }
+
+  /* ── Intro row ── */
+  .intro-row { grid-template-columns:1fr; gap:16px; margin-bottom:40px; }
+
+  /* ── Section headings ── */
+  h2.sh { font-size:clamp(26px,7vw,40px); }
+
+  /* ── Capability cards ── */
+  .cap-grid { grid-template-columns:1fr; }
+  .cap-card { padding:28px 20px 22px; }
+
+  /* ── Industry grid ── */
+  .ind-grid { grid-template-columns:1fr; }
+
+  /* ── How-we-work grid ── */
+  .how-grid { grid-template-columns:1fr; }
+  .how-step { padding:28px 20px; }
+
+  /* ── Why section ── */
+  .why-grid { grid-template-columns:1fr; }
+  .why-globe { display:none; }
+
+  /* ── Contact box ── */
+  .contact-box { grid-template-columns:1fr; padding:32px 20px; gap:36px; }
+
+  /* ── Footer ── */
+  .foot-i { flex-direction:column; gap:12px; text-align:center; padding-inline:20px; }
+  footer { padding-block:28px; }
+}
+
+/* ── Extra small (iPhone SE, 375px) ── */
+@media(max-width:400px){
+  h1.h1 { font-size:clamp(28px,8.5vw,44px); }
+  .tl-pill { padding:12px 8px; }
+  .tl-label { font-size:10px; }
+  h2.sh { font-size:clamp(24px,7.5vw,36px); }
+}
+
 </style>
 
 <!-- CURSOR -->
