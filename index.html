@@ -597,6 +597,33 @@ h2.sh { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(32px,5vw
 /* section intro position:relative for globe */
 .why-intro-wrap { position:relative; overflow:visible; margin-bottom:44px; }
 
+
+/* ── TRIANGLE FLOAT ANIMATIONS ── */
+@keyframes tri-fl1 {
+  0%,100%{ transform: translate(0px,0px) rotate(0deg); }
+  25%    { transform: translate(28px,-35px) rotate(3deg); }
+  50%    { transform: translate(12px,-55px) rotate(-2deg); }
+  75%    { transform: translate(-16px,-28px) rotate(1.5deg); }
+}
+@keyframes tri-fl2 {
+  0%,100%{ transform: translate(0px,0px) rotate(0deg); }
+  30%    { transform: translate(-32px,-42px) rotate(-3deg); }
+  60%    { transform: translate(-14px,-60px) rotate(2deg); }
+  80%    { transform: translate(18px,-30px) rotate(-1.5deg); }
+}
+@keyframes tri-fl3 {
+  0%,100%{ transform: translate(0px,0px) rotate(0deg); }
+  35%    { transform: translate(22px,-46px) rotate(3.5deg); }
+  65%    { transform: translate(10px,-64px) rotate(-2.5deg); }
+  85%    { transform: translate(-14px,-24px) rotate(1.5deg); }
+}
+@keyframes tri-fl4 {
+  0%,100%{ transform: translate(0px,0px) rotate(0deg); }
+  25%    { transform: translate(-26px,-38px) rotate(-2.5deg); }
+  55%    { transform: translate(-10px,-56px) rotate(3deg); }
+  80%    { transform: translate(16px,-28px) rotate(-1.5deg); }
+}
+
 /* ══ TAGLINE STRIP ══ */
 .tagline-strip {
   border-top: 1px solid rgba(0,212,255,.12);
@@ -744,54 +771,42 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
       <!-- ═══ LEFT SIDE — 3 triangles ═══ -->
 
       <!-- L1: Large cyan triangle, upper-left -->
-      <polygon points="180,40 420,480 -60,480"
+      <g style="animation:tri-fl1 7s ease-in-out infinite;transform-origin:180px 260px"><polygon points="180,40 420,480 -60,480"
         stroke="#00d4ff" stroke-width="2"
         fill="transparent"
-        filter="url(#gf1)" opacity=".75">
-        <animateTransform attributeName="transform" type="translate" values="0,0;8,12;0,0" dur="15s" repeatCount="indefinite"/>
-      </polygon>
+        filter="url(#gf1)" opacity=".75"></g>
 
       <!-- L2: Medium violet triangle, mid-left, inverted -->
-      <polygon points="100,820 340,460 -140,460"
+      <g style="animation:tri-fl2 9s ease-in-out infinite;transform-origin:100px 640px"><polygon points="100,820 340,460 -140,460"
         stroke="#a07aff" stroke-width="2"
         fill="transparent"
-        filter="url(#gf2)" opacity=".7">
-        <animateTransform attributeName="transform" type="translate" values="0,0;-6,10;0,0" dur="18s" repeatCount="indefinite"/>
-      </polygon>
+        filter="url(#gf2)" opacity=".7"></g>
 
       <!-- L3: Small amber triangle, lower-left corner -->
-      <polygon points="60,680 220,900 -100,900"
+      <g style="animation:tri-fl3 6s ease-in-out infinite;transform-origin:60px 790px"><polygon points="60,680 220,900 -100,900"
         stroke="#f0a832" stroke-width="1.8"
         fill="transparent"
-        filter="url(#gf3)" opacity=".65">
-        <animateTransform attributeName="transform" type="translate" values="0,0;5,-8;0,0" dur="12s" repeatCount="indefinite"/>
-      </polygon>
+        filter="url(#gf3)" opacity=".65"></g>
 
       <!-- ═══ RIGHT SIDE — 3 triangles ═══ -->
 
       <!-- R1: Large violet triangle, right-centre — main hero shape -->
-      <polygon points="1150,60 1430,560 870,560"
+      <g style="animation:tri-fl4 8s ease-in-out infinite;transform-origin:1150px 310px"><polygon points="1150,60 1430,560 870,560"
         stroke="#a07aff" stroke-width="2"
         fill="transparent"
-        filter="url(#gf1)" opacity=".8">
-        <animateTransform attributeName="transform" type="translate" values="0,0;-10,-12;0,0" dur="16s" repeatCount="indefinite"/>
-      </polygon>
+        filter="url(#gf1)" opacity=".8"></g>
 
       <!-- R2: Medium green triangle, upper-right -->
-      <polygon points="1080,20 1300,340 860,340"
+      <g style="animation:tri-fl1 7s ease-in-out infinite;transform-origin:1080px 180px"><polygon points="1080,20 1300,340 860,340"
         stroke="#00ffaa" stroke-width="1.8"
         fill="transparent"
-        filter="url(#gf2)" opacity=".7">
-        <animateTransform attributeName="transform" type="translate" values="0,0;8,10;0,0" dur="13s" repeatCount="indefinite"/>
-      </polygon>
+        filter="url(#gf2)" opacity=".7"></g>
 
       <!-- R3: Small rose triangle, lower-right, inverted -->
-      <polygon points="1280,880 1480,520 1080,520"
+      <g style="animation:tri-fl2 9s ease-in-out infinite;transform-origin:1280px 700px"><polygon points="1280,880 1480,520 1080,520"
         stroke="#ff4488" stroke-width="1.8"
         fill="transparent"
-        filter="url(#gf3)" opacity=".65">
-        <animateTransform attributeName="transform" type="translate" values="0,0;-6,8;0,0" dur="11s" repeatCount="indefinite"/>
-      </polygon>
+        filter="url(#gf3)" opacity=".65"></g>
     </svg>
   </div>
 
@@ -932,25 +947,13 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
       <filter id="hwgf" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     </defs>
     <!-- Left: cyan top, amber bottom-inverted -->
-    <polygon points="120,20 300,340 -60,340" stroke="#00d4ff" stroke-width="1.8" fill="transparent" filter="url(#hwgf)" opacity=".5">
-      <animateTransform attributeName="transform" type="translate" values="0,0;6,10;0,0" dur="14s" repeatCount="indefinite"/>
-    </polygon>
-    <polygon points="80,580 260,320 -100,320" stroke="#f0a832" stroke-width="1.6" fill="transparent" filter="url(#hwgf)" opacity=".4">
-      <animateTransform attributeName="transform" type="translate" values="0,0;-5,8;0,0" dur="17s" repeatCount="indefinite"/>
-    </polygon>
-    <polygon points="40,420 160,580 -80,580" stroke="#a07aff" stroke-width="1.4" fill="transparent" filter="url(#hwgf)" opacity=".35">
-      <animateTransform attributeName="transform" type="translate" values="0,0;4,-6;0,0" dur="11s" repeatCount="indefinite"/>
-    </polygon>
+    <g style="animation:tri-fl3 6s ease-in-out infinite;transform-origin:120px 180px"><polygon points="120,20 300,340 -60,340" stroke="#00d4ff" stroke-width="1.8" fill="transparent" filter="url(#hwgf)" opacity=".5"></g>
+    <g style="animation:tri-fl1 7s ease-in-out infinite;transform-origin:80px 450px"><polygon points="80,580 260,320 -100,320" stroke="#f0a832" stroke-width="1.6" fill="transparent" filter="url(#hwgf)" opacity=".4"></g>
+    <g style="animation:tri-fl2 9s ease-in-out infinite;transform-origin:40px 500px"><polygon points="40,420 160,580 -80,580" stroke="#a07aff" stroke-width="1.4" fill="transparent" filter="url(#hwgf)" opacity=".35"></g>
     <!-- Right: violet top, green mid, rose bottom-inverted -->
-    <polygon points="1320,20 1500,340 1140,340" stroke="#a07aff" stroke-width="1.8" fill="transparent" filter="url(#hwgf)" opacity=".5">
-      <animateTransform attributeName="transform" type="translate" values="0,0;-8,-10;0,0" dur="15s" repeatCount="indefinite"/>
-    </polygon>
-    <polygon points="1260,180 1420,420 1100,420" stroke="#00ffaa" stroke-width="1.6" fill="transparent" filter="url(#hwgf)" opacity=".4">
-      <animateTransform attributeName="transform" type="translate" values="0,0;6,8;0,0" dur="12s" repeatCount="indefinite"/>
-    </polygon>
-    <polygon points="1360,580 1520,300 1200,300" stroke="#ff4488" stroke-width="1.4" fill="transparent" filter="url(#hwgf)" opacity=".35">
-      <animateTransform attributeName="transform" type="translate" values="0,0;-4,6;0,0" dur="10s" repeatCount="indefinite"/>
-    </polygon>
+    <g style="animation:tri-fl4 8s ease-in-out infinite;transform-origin:1320px 180px"><polygon points="1320,20 1500,340 1140,340" stroke="#a07aff" stroke-width="1.8" fill="transparent" filter="url(#hwgf)" opacity=".5"></g>
+    <g style="animation:tri-fl1 7s ease-in-out infinite;transform-origin:1260px 300px"><polygon points="1260,180 1420,420 1100,420" stroke="#00ffaa" stroke-width="1.6" fill="transparent" filter="url(#hwgf)" opacity=".4"></g>
+    <g style="animation:tri-fl2 9s ease-in-out infinite;transform-origin:1360px 440px"><polygon points="1360,580 1520,300 1200,300" stroke="#ff4488" stroke-width="1.4" fill="transparent" filter="url(#hwgf)" opacity=".35"></g>
   </svg>
   <div class="wrap">
     <div class="intro-row rv">
@@ -1034,24 +1037,12 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
     <defs>
       <filter id="ctgf" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     </defs>
-    <polygon points="140,30 360,400 -80,400" stroke="#00d4ff" stroke-width="1.8" fill="transparent" filter="url(#ctgf)" opacity=".45">
-      <animateTransform attributeName="transform" type="translate" values="0,0;7,10;0,0" dur="16s" repeatCount="indefinite"/>
-    </polygon>
-    <polygon points="60,560 240,280 -120,280" stroke="#a07aff" stroke-width="1.6" fill="transparent" filter="url(#ctgf)" opacity=".38">
-      <animateTransform attributeName="transform" type="translate" values="0,0;-5,8;0,0" dur="19s" repeatCount="indefinite"/>
-    </polygon>
-    <polygon points="20,440 160,620 -120,620" stroke="#f0a832" stroke-width="1.4" fill="transparent" filter="url(#ctgf)" opacity=".32">
-      <animateTransform attributeName="transform" type="translate" values="0,0;4,-5;0,0" dur="13s" repeatCount="indefinite"/>
-    </polygon>
-    <polygon points="1300,30 1520,400 1080,400" stroke="#a07aff" stroke-width="1.8" fill="transparent" filter="url(#ctgf)" opacity=".45">
-      <animateTransform attributeName="transform" type="translate" values="0,0;-8,-10;0,0" dur="14s" repeatCount="indefinite"/>
-    </polygon>
-    <polygon points="1240,200 1440,480 1040,480" stroke="#00ffaa" stroke-width="1.6" fill="transparent" filter="url(#ctgf)" opacity=".38">
-      <animateTransform attributeName="transform" type="translate" values="0,0;6,8;0,0" dur="11s" repeatCount="indefinite"/>
-    </polygon>
-    <polygon points="1380,560 1540,280 1220,280" stroke="#ff4488" stroke-width="1.4" fill="transparent" filter="url(#ctgf)" opacity=".32">
-      <animateTransform attributeName="transform" type="translate" values="0,0;-4,6;0,0" dur="18s" repeatCount="indefinite"/>
-    </polygon>
+    <g style="animation:tri-fl1 7s ease-in-out infinite;transform-origin:140px 215px"><polygon points="140,30 360,400 -80,400" stroke="#00d4ff" stroke-width="1.8" fill="transparent" filter="url(#ctgf)" opacity=".45"></polygon></g>
+    <g style="animation:tri-fl2 9s ease-in-out infinite;transform-origin:60px 420px"><polygon points="60,560 240,280 -120,280" stroke="#a07aff" stroke-width="1.6" fill="transparent" filter="url(#ctgf)" opacity=".38"></polygon></g>
+    <g style="animation:tri-fl3 6s ease-in-out infinite;transform-origin:20px 530px"><polygon points="20,440 160,620 -120,620" stroke="#f0a832" stroke-width="1.4" fill="transparent" filter="url(#ctgf)" opacity=".32"></polygon></g>
+    <g style="animation:tri-fl4 8s ease-in-out infinite;transform-origin:1300px 215px"><polygon points="1300,30 1520,400 1080,400" stroke="#a07aff" stroke-width="1.8" fill="transparent" filter="url(#ctgf)" opacity=".45"></polygon></g>
+    <g style="animation:tri-fl1 7s ease-in-out infinite;transform-origin:1240px 340px"><polygon points="1240,200 1440,480 1040,480" stroke="#00ffaa" stroke-width="1.6" fill="transparent" filter="url(#ctgf)" opacity=".38"></polygon></g>
+    <g style="animation:tri-fl2 9s ease-in-out infinite;transform-origin:1380px 420px"><polygon points="1380,560 1540,280 1220,280" stroke="#ff4488" stroke-width="1.4" fill="transparent" filter="url(#ctgf)" opacity=".32"></polygon></g>
   </svg>
   <div class="wrap">
     <div class="contact-box rv">
