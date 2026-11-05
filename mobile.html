@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Wigburg Group</title>
+<meta name="description" content="Production AI for industries where getting it wrong is not an option.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#000;--bg:#06060a;--card:#0d0d18;--border:rgba(255,255,255,.07);
+  --cyan:#00d4ff;--violet:#7b5cf0;--violet2:#a07aff;--amber:#f0a832;--green:#00ffaa;
+  --fg:#f0f4ff;--fg2:#7a84a8;--fg3:#3a4268;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--fg);font-family:'Inter',system-ui,sans-serif;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);height:60px;display:flex;align-items:center;padding:0 20px;justify-content:space-between}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.03em;background:linear-gradient(135deg,var(--cyan),var(--violet2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-cta-m{font-size:12px;font-weight:700;padding:8px 18px;background:linear-gradient(135deg,var(--violet),var(--cyan));border-radius:50px;color:#fff;white-space:nowrap}
+
+/* HERO */
+.hero{padding:100px 20px 56px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:300px;height:300px;background:radial-gradient(circle,rgba(123,92,240,.18),transparent 70%);border-radius:50%;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2);border-radius:100px;padding:6px 16px 6px 10px;margin-bottom:24px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+.badge-txt{font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:.08em}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,9vw,52px);line-height:1.05;letter-spacing:-.03em;text-wrap:balance;margin-bottom:18px}
+h1 .c{color:var(--cyan)}
+h1 .v{color:var(--violet2)}
+.hero-sub{font-size:14px;color:var(--fg2);line-height:1.75;margin-bottom:32px;max-width:360px;margin-left:auto;margin-right:auto}
+.btn-p{display:block;text-align:center;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;font-size:14px;font-weight:700;padding:15px 24px;border-radius:10px;margin-bottom:12px}
+.btn-o{display:block;text-align:center;font-size:14px;font-weight:500;color:var(--fg2);padding:14px 24px;border-radius:10px;border:1px solid rgba(255,255,255,.12)}
+
+/* TAGLINE STRIP */
+.strip{border-top:1px solid rgba(0,212,255,.1);border-bottom:1px solid rgba(0,212,255,.07);padding:24px 20px;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.strip-item{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 10px;border-right:1px solid rgba(255,255,255,.05)}
+.strip-item:nth-child(even){border-right:none}
+.strip-item:nth-child(1),.strip-item:nth-child(2){border-bottom:1px solid rgba(255,255,255,.05)}
+.strip-icon{font-size:24px;line-height:1}
+.strip-label{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--fg2);text-align:center}
+
+/* SECTIONS */
+section{padding:56px 20px}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.sec-label::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--cyan),var(--violet));border-radius:2px;flex-shrink:0}
+h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(26px,7vw,38px);line-height:1.08;letter-spacing:-.03em;text-wrap:balance;margin-bottom:14px}
+.sec-sub{font-size:14px;color:var(--fg2);line-height:1.75;margin-bottom:36px}
+
+/* CAPABILITY CARDS */
+.cap-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.cap-card{background:var(--card);padding:24px 20px}
+.cap-prod{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:6px}
+.cap-title{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;margin-bottom:10px}
+.cap-desc{font-size:13px;color:var(--fg2);line-height:1.7;margin-bottom:12px}
+.cap-tags{display:flex;flex-wrap:wrap;gap:6px}
+.cap-tag{font-size:10px;font-weight:600;padding:4px 10px;background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.15);border-radius:20px;color:var(--cyan)}
+.cap-card:nth-child(2) .cap-tag{background:rgba(123,92,240,.07);border-color:rgba(123,92,240,.2);color:var(--violet2)}
+.cap-card:nth-child(3) .cap-tag{background:rgba(240,168,50,.07);border-color:rgba(240,168,50,.2);color:var(--amber)}
+
+/* INDUSTRIES */
+.ind-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.ind-card{background:var(--card);padding:20px 16px;text-align:center}
+.ind-emoji{font-size:22px;margin-bottom:8px}
+.ind-name{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;margin-bottom:4px}
+.ind-note{font-size:11px;color:var(--fg3);line-height:1.5}
+
+/* HOW WE WORK */
+.how-bg{background:var(--bg);border-radius:14px;padding:24px 20px;margin-top:0}
+.how-steps{display:flex;flex-direction:column;gap:0}
+.how-step{padding:20px 0;border-bottom:1px solid var(--border)}
+.how-step:last-child{border-bottom:none}
+.how-num{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;color:var(--border);letter-spacing:-.04em;line-height:1;margin-bottom:6px}
+.how-ttl{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;margin-bottom:8px}
+.how-desc{font-size:13px;color:var(--fg2);line-height:1.7}
+
+/* WHY */
+.why-cards{display:flex;flex-direction:column;gap:12px}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 20px}
+.why-icon-wrap{width:40px;height:40px;border-radius:10px;background:rgba(123,92,240,.12);border:1px solid rgba(123,92,240,.2);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px}
+.why-ttl{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:8px}
+.why-desc{font-size:13px;color:var(--fg2);line-height:1.7}
+
+/* CONTACT */
+.contact-wrap{background:var(--card);border:1px solid rgba(0,212,255,.12);border-radius:16px;padding:32px 20px}
+.contact-wrap h2{margin-bottom:12px}
+.contact-wrap .sec-sub{margin-bottom:28px}
+.c-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:4px;display:block}
+.c-val{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--fg);margin-bottom:20px;word-break:break-all}
+.c-addr{font-size:13px;color:var(--fg2);line-height:1.65;margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.chip{font-size:10px;font-weight:600;letter-spacing:.04em;color:var(--cyan);background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.18);border-radius:20px;padding:5px 12px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:28px 20px;text-align:center}
+.foot-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.03em;background:linear-gradient(135deg,var(--cyan),var(--violet2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.foot-copy{font-size:12px;color:var(--fg3)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Wigburg<span style="font-weight:300;opacity:.7"> Group</span><span style="color:var(--cyan)">.</span></div>
+  <a href="#contact" class="nav-cta-m">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    <div class="badge-dot"></div>
+    <span class="badge-txt">NOW TAKING PROJECTS · 2026</span>
+  </div>
+  <h1>We build <span class="c">AI</span> that works in the <span class="v">real world.</span></h1>
+  <p class="hero-sub">From voice agents on the factory floor to compliance-grade financial intelligence — Wigburg engineers production AI for industries where getting it wrong is not an option.</p>
+  <a href="#capabilities" class="btn-p">See what we build ↓</a>
+  <a href="#contact" class="btn-o">Talk to us</a>
+</section>
+
+<!-- TAGLINE STRIP -->
+<div class="strip">
+  <div class="strip-item"><div class="strip-icon">🧠</div><div class="strip-label">Production AI</div></div>
+  <div class="strip-item"><div class="strip-icon">🔒</div><div class="strip-label">Compliance-Ready</div></div>
+  <div class="strip-item"><div class="strip-icon">🏭</div><div class="strip-label">Domain-Deep</div></div>
+  <div class="strip-item"><div class="strip-icon">⚙️</div><div class="strip-label">Your Stack</div></div>
+</div>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" style="background:var(--bg)">
+  <div class="sec-label">What We Build</div>
+  <h2>Six AI capabilities.<br>One engineering standard.</h2>
+  <p class="sec-sub">We don't sell AI as a concept. We design, build, and deploy systems that connect to your data, your processes, and your industry's rules.</p>
+  <div class="cap-list">
+    <div class="cap-card">
+      <div class="cap-prod">VoiceCore</div>
+      <div class="cap-title">AI Voice Agents</div>
+      <div class="cap-desc">Conversational AI your team talks to. Field engineers get live job data, manuals, and real-time guidance by voice — 24/7, any language.</div>
+      <div class="cap-tags"><span class="cap-tag">Speech-to-text</span><span class="cap-tag">Real-time RAG</span><span class="cap-tag">Multi-language</span></div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-prod">KnowledgeMesh</div>
+      <div class="cap-title">RAG &amp; Knowledge Systems</div>
+      <div class="cap-desc">Connect AI to your documents, manuals, and internal data. Precise answers from your own knowledge base — not generic chatbot responses.</div>
+      <div class="cap-tags"><span class="cap-tag">Document ingestion</span><span class="cap-tag">Semantic search</span><span class="cap-tag">Live retrieval</span></div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-prod">AgentOS</div>
+      <div class="cap-title">Multi-Agent Systems</div>
+      <div class="cap-desc">Complex workflows automated. Multiple AI agents in concert — forecasting, procurement, anomaly detection — orchestrated and logged.</div>
+      <div class="cap-tags"><span class="cap-tag">Orchestration</span><span class="cap-tag">Tool use</span><span class="cap-tag">Audit trail</span></div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-prod">FlowEngine</div>
+      <div class="cap-title">Automation Pipelines</div>
+      <div class="cap-desc">End-to-end automation of your data flows. Ingest from POS, ERP, APIs. Transform, validate, enrich, and route — no manual intervention.</div>
+      <div class="cap-tags"><span class="cap-tag">ETL / ELT</span><span class="cap-tag">Workflow automation</span><span class="cap-tag">Integration</span></div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-prod">SignalIQ</div>
+      <div class="cap-title">Forecasting &amp; Intelligence</div>
+      <div class="cap-desc">ML models that predict what happens next — demand, inventory, risk, churn. Trained on your data, tuned to your domain.</div>
+      <div class="cap-tags"><span class="cap-tag">Demand forecasting</span><span class="cap-tag">Anomaly detection</span><span class="cap-tag">Predictive analytics</span></div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-prod">AuditShield</div>
+      <div class="cap-title">Compliance-Grade AI</div>
+      <div class="cap-desc">AI built for regulated environments. Every decision logged, every model documented. MiFID II, GDPR, DORA, EU AI Act — built in from day one.</div>
+      <div class="cap-tags"><span class="cap-tag">Audit trail</span><span class="cap-tag">Explainability</span><span class="cap-tag">Data governance</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="sec-label">Industries</div>
+  <h2>Every sector.<br>One engineering standard.</h2>
+  <p class="sec-sub">AI isn't industry-agnostic — the problems, data, and regulations differ entirely by sector. We've built for these industries.</p>
+  <div class="ind-list">
+    <div class="ind-card"><div class="ind-emoji">🏦</div><div class="ind-name">Financial Services</div><div class="ind-note">Banking, fintech, insurance, wealth management</div></div>
+    <div class="ind-card"><div class="ind-emoji">🔧</div><div class="ind-name">Field Operations</div><div class="ind-note">Industrial, facilities, field engineering</div></div>
+    <div class="ind-card"><div class="ind-emoji">🏨</div><div class="ind-name">Hospitality</div><div class="ind-note">Hotels, restaurants, food &amp; beverage</div></div>
+    <div class="ind-card"><div class="ind-emoji">🛒</div><div class="ind-name">Retail &amp; E-commerce</div><div class="ind-note">Inventory, demand, personalisation</div></div>
+    <div class="ind-card"><div class="ind-emoji">🏥</div><div class="ind-name">Healthcare</div><div class="ind-note">Clinical docs, admin automation, triage</div></div>
+    <div class="ind-card"><div class="ind-emoji">🏭</div><div class="ind-name">Manufacturing</div><div class="ind-note">Quality control, predictive maintenance</div></div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section id="how" style="background:var(--bg)">
+  <div class="sec-label">How We Work</div>
+  <h2>Problem to production.</h2>
+  <p class="sec-sub">We are engineers, not consultants. Every engagement ends with a system running in your environment — not a report recommending one.</p>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">01</div><div class="how-ttl">Discover</div><div class="how-desc">We map your data, processes, and constraints. We find the highest-value AI intervention — not the most impressive-sounding one.</div></div>
+    <div class="how-step"><div class="how-num">02</div><div class="how-ttl">Design</div><div class="how-desc">Architecture that fits your stack, compliance requirements, and your team's ability to maintain it. No unnecessary complexity.</div></div>
+    <div class="how-step"><div class="how-num">03</div><div class="how-ttl">Build</div><div class="how-desc">Production-quality code, not prototypes. Multi-tenant where needed, isolated where required, observable throughout.</div></div>
+    <div class="how-step"><div class="how-num">04</div><div class="how-ttl">Deploy &amp; Own</div><div class="how-desc">We deploy to your infrastructure, document everything, and hand over systems your team can run. We stay available for iteration.</div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section>
+  <div class="sec-label">Why Wigburg Group</div>
+  <h2>Built different.</h2>
+  <p class="sec-sub">Most AI projects fail between the demo and production. We start where most companies stop.</p>
+  <div class="why-cards">
+    <div class="why-card"><div class="why-icon-wrap">⚡</div><div class="why-ttl">Production-first engineering</div><div class="why-desc">We build for the real world: edge cases, bad data, legacy systems, angry users, and the moment your demo becomes your product.</div></div>
+    <div class="why-card"><div class="why-icon-wrap">🔍</div><div class="why-ttl">Domain-deep teams</div><div class="why-desc">We don't parachute in generalists. Our engineers have worked in finance, field ops, healthcare, and hospitality — your problems aren't new to us.</div></div>
+    <div class="why-card"><div class="why-icon-wrap">🔒</div><div class="why-ttl">Compliance by design</div><div class="why-desc">Regulated industries need AI that documents its own decisions. We build audit trails, explainability, and governance as first-class features.</div></div>
+    <div class="why-card"><div class="why-icon-wrap">🌍</div><div class="why-ttl">Global reach, local presence</div><div class="why-desc">Headquartered in Málaga, Spain. Deploying across Europe and beyond. GDPR-native, multilingual, timezone-aware.</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--bg)">
+  <div class="contact-wrap">
+    <div class="sec-label">Contact</div>
+    <h2>Start a conversation.</h2>
+    <p class="sec-sub">Tell us what you're building. We'll tell you if we can make it better — and how.</p>
+    <span class="c-label">Email</span>
+    <div class="c-val">support@wigburggroup.com</div>
+    <span class="c-label">Based in</span>
+    <div class="c-addr">Málaga, Spain<br>Serving clients across Europe &amp; globally</div>
+    <div class="chips">
+      <span class="chip">AI Strategy</span>
+      <span class="chip">RAG Systems</span>
+      <span class="chip">Voice Agents</span>
+      <span class="chip">Automation</span>
+      <span class="chip">Compliance AI</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">Wigburg Group.</div>
+  <div class="foot-copy">© 2026 Wigburg Group · Málaga, Spain · support@wigburggroup.com</div>
+</footer>
+
+<script>
+// Minimal JS: just nav scroll effect
+window.addEventListener('scroll',function(){
+  document.querySelector('nav').style.borderBottomColor = scrollY>40 ? 'rgba(0,212,255,.12)' : 'rgba(255,255,255,.06)';
+},{passive:true});
+</script>
+</body>
+</html>
