@@ -834,6 +834,29 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
   h2.sh { font-size:clamp(24px,7.5vw,36px); }
 }
 
+
+/* ── Kill CSS animations on mobile for performance ── */
+html.mobile .aurora-band,
+html.mobile .orb,
+html.mobile #ring3d,
+html.mobile .neon-shapes,
+html.mobile .scanlines,
+html.mobile #cur,
+html.mobile #cur-ring {
+  display: none !important;
+  animation: none !important;
+}
+html.mobile * {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+}
+/* Keep reveal transitions on mobile but instant */
+html.mobile .rv {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 </style>
 
 <!-- CURSOR -->
@@ -1203,8 +1226,18 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
 </footer>
 
 <script>
+/* ══ MOBILE DETECTION — skip heavy animations on small screens ══ */
+var IS_MOBILE = window.innerWidth <= 700 || ('ontouchstart' in window && window.innerWidth <= 900);
+if(IS_MOBILE){
+  document.documentElement.classList.add('mobile');
+  // Remove aurora and heavy background elements
+  var aurora = document.getElementById('aurora');
+  if(aurora) aurora.remove();
+}
+
 /* ═══ CURSOR ═══ */
 (function(){
+  if(IS_MOBILE) return; // no cursor on touch
   const c=document.getElementById('cur'), r=document.getElementById('cur-ring');
   if(!c||!r)return;
   let mx=0,my=0,rx=0,ry=0;
@@ -1241,6 +1274,7 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
 
 /* ═══ CAPABILITY ANIMATIONS ═══ */
 (function(){
+  if(IS_MOBILE) return; // skip canvas animations on mobile
   const CYAN='rgba(0,212,255,';const VIO='rgba(123,92,240,';const AMB='rgba(240,168,50,';const GRN='rgba(0,255,170,';const ROSE='rgba(255,68,136,';
   const CYANS='#00d4ff';const VIOS='#7b5cf0';const AMBS='#f0a832';const GRNS='#00ffaa';
 
@@ -1484,6 +1518,7 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
 
 /* ═══ 3D TILT on CAP + IND CARDS ═══ */
 (function(){
+  if(IS_MOBILE) return;
   function tilt(card,maxDeg){
     card.addEventListener('mousemove',e=>{
       const r=card.getBoundingClientRect();
@@ -1862,6 +1897,7 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
 
   /* ── PYRAMID (tetrahedron) ── */
   (function(){
+  if(IS_MOBILE) return; // skip 3D wireframe icons
     const c = document.getElementById('wf-pyramid'); if(!c) return;
     c.width = 80*DPR; c.height = 80*DPR;
     const ctx = c.getContext('2d');
