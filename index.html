@@ -216,6 +216,37 @@ nav.scrolled { background:rgba(6,10,20,.88); backdrop-filter:blur(24px); }
 .nav-cta:hover { box-shadow:0 0 40px rgba(123,92,240,.5); transform:translateY(-2px); }
 @media(max-width:700px){.nav-links{display:none;}}
 
+/* ── MOBILE NAV HAMBURGER ── */
+.nav-hamburger {
+  display:none; flex-direction:column; gap:5px; cursor:pointer;
+  padding:6px; background:none; border:none; z-index:1001;
+}
+.nav-hamburger span {
+  display:block; width:22px; height:2px;
+  background:var(--fg); border-radius:2px;
+  transition:transform .25s, opacity .25s;
+}
+.nav-mobile-menu {
+  display:none; position:fixed; inset:0; top:68px;
+  background:rgba(0,0,0,.97); backdrop-filter:blur(20px);
+  flex-direction:column; align-items:center; justify-content:center;
+  gap:36px; z-index:1000;
+}
+.nav-mobile-menu.open { display:flex; }
+.nav-mobile-menu a {
+  font-family:'Syne',sans-serif; font-size:28px; font-weight:700;
+  color:var(--fg); text-decoration:none; letter-spacing:-.02em;
+}
+.nav-mobile-menu .nav-cta-m {
+  font-size:16px; font-weight:700; padding:14px 36px;
+  background: linear-gradient(135deg,var(--violet),var(--cyan));
+  border-radius:50px; color:#fff;
+}
+@media(max-width:700px){
+  .nav-cta { display:none; }
+  .nav-hamburger { display:flex; }
+}
+
 /* ══ HERO THREE.JS ══ */
 #three-hero {
   position:absolute; inset:0; z-index:0; pointer-events:none;
@@ -233,6 +264,21 @@ nav.scrolled { background:rgba(6,10,20,.88); backdrop-filter:blur(24px); }
   position:absolute; inset:0; width:100%; height:100%;
   z-index:0; opacity:.85;
 }
+/* ── HERO MOBILE ── */
+@media(max-width:700px){
+  .hero { min-height:auto; padding-top:88px; padding-bottom:60px; align-items:flex-start; }
+  .neon-shapes { display:none; }
+  #ring3d { display:none; }
+  .orb { display:none; }
+  .hero-content {
+    padding: 32px max(24px,env(safe-area-inset-left,0px)) 48px max(24px,env(safe-area-inset-right,0px));
+  }
+  h1.h1 { font-size: clamp(36px,10vw,60px); }
+  .hero-sub { font-size:15px; }
+  .hero-btns { flex-direction:column; gap:12px; align-items:stretch; }
+  .btn-p, .btn-s { text-align:center; }
+}
+
 /* 3D floating orbs */
 .orb-field { position:absolute; inset:0; pointer-events:none; z-index:1; perspective:600px; }
 .orb {
@@ -675,6 +721,14 @@ h2.sh { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(32px,5vw
   width:80px; height:80px;
   display:block;
 }
+@media(max-width:700px){
+  .tagline-strip { padding-block:32px; }
+  .tagline-inner { grid-template-columns:repeat(2,1fr)!important; }
+  .tl-pill { padding:16px 12px; }
+  .tl-icon-wrap { width:56px; height:56px; }
+  .tl-canvas { width:56px; height:56px; }
+  .tl-label { font-size:11px; }
+}
 .tl-label {
   font-family:'Syne',sans-serif; font-weight:800;
   font-size: clamp(13px,1vw,15px);
@@ -754,8 +808,17 @@ footer { border-top:1px solid var(--border); padding-block:36px; }
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Get in touch</a>
+    <button class="nav-hamburger" id="nav-ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="nav-mobile-menu" id="nav-mob">
+  <a href="#capabilities" onclick="closeMobMenu()">What We Build</a>
+  <a href="#industries" onclick="closeMobMenu()">Industries</a>
+  <a href="#how" onclick="closeMobMenu()">How We Work</a>
+  <a href="#contact" onclick="closeMobMenu()" class="nav-cta-m">Get in touch</a>
+</div>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
